@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Thảo Dược">
+<meta name="theme-color" content="#f4efe3">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%232f4a3a'/%3E%3Cpath d='M90 140 C90 100 60 80 45 60 C80 60 95 85 90 140 M90 140 C92 95 115 70 140 55 C140 95 115 120 90 140' fill='%23e9dfc6'/%3E%3C/svg%3E">
+<title>Thảo Dược Chữa Bệnh</title>
+<style>
+:root{
+  --bg:#f4efe3; --paper:#fffdf7; --ink:#22251f; --muted:#6c6a5e; --line:#e3dccb;
+  --green:#2f4a3a; --green2:#4f7a5c; --leaf:#e5eedf; --clay:#b4553a; --clay-soft:#f6e3db; --gold:#c99a3c;
+  --serif:"Iowan Old Style","Palatino","Georgia",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#171a16; --paper:#20241f; --ink:#ece8dc; --muted:#a29f92; --line:#343a32;
+  --green:#a9cfb2; --green2:#8bbf98; --leaf:#26332a; --clay:#e2896c; --clay-soft:#3a2721; --gold:#d8b25e;
+}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}
+.wrap{max-width:680px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 18px) 16px calc(env(safe-area-inset-bottom) + 40px)}
+header h1{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.1;margin:6px 0 4px;color:var(--green);letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);font-size:14px}
+.leaf{display:inline-block;width:26px;height:26px;vertical-align:-3px;margin-right:6px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:14px}
+label.lbl{font-weight:600;font-size:15px;display:block;margin-bottom:8px}
+textarea{width:100%;min-height:84px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:17px;background:var(--bg);color:var(--ink);outline:none}
+textarea:focus{border-color:var(--green2)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;font-family:inherit}
+.chip.on{background:var(--green);color:var(--paper);border-color:var(--green)}
+.row{display:flex;gap:10px;align-items:center;margin-top:12px}
+.btn{flex:1;border:0;border-radius:12px;padding:14px;font-size:17px;font-weight:600;background:var(--green);color:var(--paper);font-family:inherit;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.btn.ghost{flex:0 0 auto;background:transparent;color:var(--muted);border:1px solid var(--line);padding:14px 16px;font-weight:500}
+select{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--paper);color:var(--ink);max-width:100%}
+.recent{margin-top:10px;font-size:13px;color:var(--muted)}
+.recent a{color:var(--green2);text-decoration:none;margin-right:10px;white-space:nowrap}
+h2{font-family:var(--serif);font-size:21px;margin:26px 0 6px;color:var(--green);font-weight:600}
+.sub{color:var(--muted);font-size:13px;margin:0 0 8px}
+.alert{background:var(--clay-soft);border:1px solid color-mix(in srgb,var(--clay) 35%,transparent);border-radius:14px;padding:12px 14px;margin-top:14px;font-size:14.5px}
+.alert b{color:var(--clay)}
+.alert ul{margin:6px 0 0;padding-left:18px}
+.tagline{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:12.5px;padding:3px 9px;border-radius:999px;background:var(--leaf);color:var(--green)}
+.tag.warn{background:var(--clay-soft);color:var(--clay)}
+.guide{border-left:4px solid var(--green2)}
+.guide h3{font-family:var(--serif);margin:0 0 6px;font-size:19px}
+.guide ol{margin:0;padding-left:20px}
+.guide li{margin:8px 0}
+.guide li b{display:block}
+.src{font-size:12px;color:var(--muted)}
+.src a{color:var(--green2)}
+.herbs{display:flex;flex-wrap:wrap;gap:8px}
+.herb{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:7px 11px;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink)}
+.herb b{font-size:15px;display:block}
+.herb span{font-size:12px;color:var(--muted)}
+.herb.on{border-color:var(--green);box-shadow:0 0 0 2px var(--green2) inset}
+.res{margin-top:12px}
+.res .meta{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted)}
+.res .book{font-weight:600;color:var(--green)}
+.res .head{font-family:var(--serif);font-size:16px;font-weight:600;margin-top:4px}
+.res .txt{margin-top:6px;font-size:15px;white-space:pre-line}
+.res .txt.clamp{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+mark{background:color-mix(in srgb,var(--gold) 35%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+mark.h{background:var(--leaf);color:var(--green);font-weight:600}
+.acts{display:flex;gap:16px;margin-top:8px;font-size:14px}
+.acts a,.acts button{color:var(--green2);background:none;border:0;padding:0;font:inherit;cursor:pointer;text-decoration:none}
+.wbox{margin-top:8px;font-size:13.5px;background:var(--clay-soft);border-radius:10px;padding:8px 10px}
+.more{width:100%;margin-top:14px}
+.empty{color:var(--muted);text-align:center;padding:30px 10px}
+footer{margin-top:34px;font-size:12.5px;color:var(--muted)}
+footer li{margin:2px 0}
+details summary{cursor:pointer;color:var(--green2);font-size:14px}
+.hidden{display:none}
+.txt.orig{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+.note{display:block;margin-top:6px;color:var(--clay);font-weight:600}
+.tabs{display:flex;gap:6px;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:4px}
+.tabs button{flex:1;border:0;background:transparent;color:var(--muted);font:inherit;font-size:15px;font-weight:600;padding:10px 6px;border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--green);color:var(--paper)}
+.lib h3{font-family:var(--serif);font-size:17px;margin:0;line-height:1.3}
+.lib .meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.lib ul{margin:8px 0 0;padding-left:18px;font-size:15px}
+.lib li{margin:5px 0}
+.lib li.rc{list-style:"🧪 "}
+.lib li.wn{list-style:"⚠️ ";color:var(--clay)}
+.lib .intro{font-size:14px;color:var(--muted);margin-top:6px}
+.lib .full{display:none}
+.lib.open .full{display:block}
+.lib.open .short{display:none}
+.lib .acts{margin-top:8px}
+.libin{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:17px;background:var(--bg);color:var(--ink);outline:none}
+.sec{font-family:var(--serif);color:var(--green);font-size:17px;margin:22px 0 4px}
+.titem{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:10px 2px;font:inherit;font-size:15.5px;color:var(--ink);cursor:pointer}
+.titem small{color:var(--muted)}
+
+
+/* chặn chọn chữ, sao chép */
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+textarea,input,select{-webkit-user-select:text;user-select:text}
+@media print{.wrap{display:none!important}body:after{content:"Nội dung app không hỗ trợ in.";display:block;padding:40px;font-size:18px}}
+/* lựa chọn cách chữa */
+.symtabs{display:flex;gap:6px;overflow-x:auto;margin-top:14px;padding-bottom:2px;scrollbar-width:none}
+.symtabs::-webkit-scrollbar{display:none}
+.symtabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer}
+.symtabs button.on{background:var(--green);color:var(--paper);border-color:var(--green)}
+.opt{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-top:10px;overflow:hidden}
+.opt.pin{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.oh{display:block;width:100%;text-align:left;background:none;border:0;padding:12px 14px;font:inherit;color:var(--ink);cursor:pointer;position:relative}
+.ot{font-family:var(--serif);font-weight:600;font-size:17px;margin-left:6px}
+.os{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+.osum{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14.5px;margin-top:5px}
+.vc{float:right;font-size:12.5px;color:var(--green2);font-weight:600;margin-left:8px;white-space:nowrap}
+.lvl{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;vertical-align:2px}
+.lvl.l1{background:var(--leaf);color:var(--green)}
+.lvl.l2{background:color-mix(in srgb,var(--gold) 22%,transparent);color:color-mix(in srgb,var(--gold) 75%,var(--ink))}
+.lvl.l3{background:var(--clay-soft);color:var(--clay)}
+.ob{padding:0 14px 14px}
+.ob .tagline{margin-top:0}
+.obody{font-size:15px}
+.obody ul{margin:8px 0 0;padding-left:18px}
+.obody li{margin:6px 0}
+.obody li.rc{list-style:"🧪 "}
+.obody p{margin:8px 0 0}
+.obody .intro{color:var(--muted);font-size:14px}
+.ob .wbox div{margin-top:4px}
+.ob .src{margin-top:8px}
+.pick{display:block;width:100%;margin-top:12px;border:1px solid var(--green);background:transparent;color:var(--green);border-radius:12px;padding:11px;font:inherit;font-weight:600;cursor:pointer}
+.pick.on{background:var(--green);color:var(--paper)}
+.lvhead{margin:22px 0 2px;font-family:var(--serif);font-size:18px;color:var(--green)}
+.lvhead small{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.pinhead{margin:16px 0 0;font-weight:600;color:var(--gold);font-size:14.5px}
+.lvbtn{display:block;width:100%;text-align:left;margin-top:12px;border:1px dashed var(--line);background:transparent;border-radius:14px;padding:12px 14px;font:inherit;font-weight:600;color:var(--green2);cursor:pointer}
+.lvbtn small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:2px}
+.hidelv{background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;margin-top:8px;cursor:pointer;padding:4px 0}
+.statnote{font-size:12.5px;color:var(--muted);margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c0-6-4-9-7-11 5-1 8 3 7 11zM12 21c0-7 3-10 8-13 0 7-4 10-8 13z"/></svg>Thảo Dược Chữa Bệnh</h1>
+  <p>Cách chữa bằng dược thảo, tóm tắt từ <span id="nbooks"></span> sách trong thư viện “Books of Healing”.</p>
+</header>
+
+<div class="tabs" id="tabs"><button class="on" data-t="sym">Tìm theo triệu chứng</button><button data-t="lib">Thư viện tiếng Việt</button></div>
+
+<div id="pane-sym">
+<div class="card">
+  <label class="lbl" for="q">Bạn đang có triệu chứng gì?</label>
+  <textarea id="q" placeholder="Ví dụ: ho, sốt, chảy mũi, nghẹt mũi…" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+  <div class="chips" id="quick"></div>
+  <div class="row">
+    <button class="btn" id="go">Tìm cách chữa</button>
+    <button class="btn ghost" id="clear" aria-label="Xoá">Xoá</button>
+  </div>
+  <div class="recent" id="recent"></div>
+</div>
+<div id="out"></div>
+</div>
+
+<div id="pane-lib" class="hidden">
+<div class="card">
+  <label class="lbl" for="lq">Tìm trong bản tóm tắt tiếng Việt</label>
+  <input id="lq" class="libin" placeholder="Tên cây hoặc bệnh: gừng, cơm cháy, ho, mất ngủ…" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div class="row"><select id="lbook"><option value="">Tất cả sách</option></select></div>
+  <p class="sub" style="margin:10px 0 0" id="lstat">Đang tải thư viện…</p>
+</div>
+<div id="lout"></div>
+</div>
+
+<footer>
+  <details><summary>Các sách đã tóm tắt</summary><ul id="booklist"></ul></details>
+  <p>Nội dung là bản tóm tắt viết lại bằng tiếng Việt, kèm ghi chú an toàn của app; không thay thế chẩn đoán của thầy thuốc. Thảo dược và tinh dầu cũng có tác dụng phụ — đọc kỹ phần lưu ý, thận trọng với phụ nữ mang thai, trẻ nhỏ và người đang có bệnh mãn tính. Tinh dầu luôn pha loãng trước khi bôi và không uống.</p>
+  <p>Nội dung thuộc dự án Thảo Dược Chữa Bệnh — vui lòng không sao chép.</p>
+</footer>
+</div>
+<script id="dat" type="application/octet-stream">/*BLOB*/</script>
+<script>// Core search engine (shared by app and node tests)
+var Engine = (function () {
+  var D, KW = {}, SYM = {}, HERB_RE = [], LOWER = [];
+  var EXACT = {gan:"gan",san:"sán",bong:"bỏng",tri:"trĩ",nac:"nấc",toc:"tóc",sung:"sưng",phu:"phù",viem:"viêm",met:"mệt",non:"nôn",cam:"cảm",cum:"cúm",hen:"hen",gau:"gàu",mun:"mụn",nam:"nấm",ham:"hăm",gut:"gút",oi:"ói",ngua:"ngứa",sot:"sốt",ho:"ho",giun:"giun",cham:"chàm",suyen:"suyễn",san_:""};
+  var REMEDY = /\b(tea|infusion|tincture|decoction|poultice|gargle|steam|inhal\w*|drops?|syrup|compress|salve|massage|bath|blend|honey|drink|teaspoons?|tablespoons?|cups?|capsules?|rub|diffuse\w*|chew|juice)\b/;
+
+  function norm(s) {
+    return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/[^a-z0-9' ]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function kwRe(k) {
+    return new RegExp("\\b" + esc(k) + ((k.indexOf(" ") < 0 && k.length > 3) ? "\\w*" : "\\b"), "g");
+  }
+  function init(data) {
+    D = data;
+    Object.keys(D.kwi).forEach(function (k) { KW[k] = kwRe(k); });
+    D.lex.forEach(function (s) { SYM[s.id] = s; });
+    Object.keys(D.herbs).forEach(function (h) { HERB_RE.push([h, new RegExp("\\b" + esc(h) + "s?\\b", "i")]); });
+    HERB_RE.sort(function (a, b) { return b[0].length - a[0].length; });
+    LOWER = D.P.map(function (p) { return p[2].toLowerCase(); });
+  }
+
+  // Parse free Vietnamese / English input into symptoms
+  function parse(input) {
+    var origTokens = input.toLowerCase().normalize("NFC").replace(/[^\p{L}\p{N}' ]+/gu, " ").split(/\s+/).filter(Boolean);
+    var normTokens = origTokens.map(norm);
+    var used = normTokens.map(function () { return false; });
+    var hasDiacritics = /[^\x00-\x7f]/.test(input);
+    var cands = [];
+    D.lex.forEach(function (s) {
+      s.alias.forEach(function (a) { cands.push([norm(a).split(" "), s.id]); });
+    });
+    cands.sort(function (a, b) { return b[0].length - a[0].length; });
+    var found = [], pos = {};
+    cands.forEach(function (c) {
+      var al = c[0], L = al.length;
+      for (var i = 0; i + L <= normTokens.length; i++) {
+        var ok = true;
+        for (var j = 0; j < L; j++) if (used[i + j] || normTokens[i + j] !== al[j]) { ok = false; break; }
+        if (!ok) continue;
+        if (L === 1 && EXACT[al[0]] && hasDiacritics && origTokens[i] !== EXACT[al[0]]) continue;
+        for (j = 0; j < L; j++) used[i + j] = true;
+        if (found.indexOf(c[1]) < 0) { found.push(c[1]); pos[c[1]] = i; }
+      }
+    });
+    found.sort(function (a, b) { return pos[a] - pos[b]; });
+    var HV = {"gừng":"ginger","tỏi":"garlic","nghệ":"turmeric","quế":"cinnamon","sả":"lemongrass","mật ong":"honey","chanh":"lemon","bạc hà":"peppermint","oải hương":"lavender","hoa cúc":"chamomile","cúc la mã":"chamomile","nha đam":"aloe","lô hội":"aloe","tía tô đất":"lemon balm","ngải cứu":"mugwort","tràm trà":"tea tree","khuynh diệp":"eucalyptus","bạch đàn":"eucalyptus","cam thảo":"licorice","hành":"onion","tiêu":"pepper","đinh hương":"clove","hương thảo":"rosemary","xạ hương":"thyme","húng quế":"basil","hương nhu":"holy basil","ớt":"cayenne","bồ công anh":"dandelion","mã đề":"plantain","giấm táo":"apple cider vinegar","dầu dừa":"coconut oil","nhân sâm":"ginseng","linh chi":"reishi","chùm ngây":"moringa","đu đủ":"papaya","dứa":"pineapple","tầm ma":"nettle","cỏ thi":"yarrow","hồi":"anise","thì là":"fennel","muối":"salt","trà xanh":"green tea","nữ lang":"valerian","nhũ hương":"frankincense","mộc dược":"myrrh"};
+    var low = " " + origTokens.join(" ") + " ", herbsEn = [];
+    Object.keys(HV).sort(function (a, b) { return b.length - a.length; }).forEach(function (v) {
+      if (low.indexOf(" " + v + " ") >= 0) { herbsEn.push(HV[v]); low = low.replace(" " + v + " ", "  "); }
+    });
+    var STOP = {toi:1,bi:1,va:1,em:1,con:1,minh:1,bé:1,be:1,hay:1,rat:1,nhieu:1,hoi:1,cu:1,the:1,la:1,co:1,khi:1,thi:1,dang:1,nay:1,ngay:1,dem:1,sang:1,toi_:1,anh:1,chi:1,ong:1,ba:1,cua:1,voi:1,kem:1,theo:1,lai:1,nhe:1,nang:1,mot:1,chut:1,and:1,i:1,have:1,a:1,the_:1,my:1,with:1,of:1};
+    var rest = [];
+    origTokens.forEach(function (t, i) { if (!used[i] && !STOP[normTokens[i]] && normTokens[i].length > 1) rest.push(t); });
+    if (herbsEn.length) rest = herbsEn.concat(rest.filter(function (t) { return low.indexOf(" " + t + " ") >= 0; }));
+    return { ids: found, rest: rest, herbsEn: herbsEn };
+  }
+
+  function scorePassage(i, ids, extraRes) {
+    var lo = LOWER[i], total = 0, matched = [], hitKws = [];
+    for (var s = 0; s < ids.length; s++) {
+      var sym = SYM[ids[s]], sc = 0;
+      for (var k = 0; k < sym.en.length; k++) {
+        var kw = sym.en[k].toLowerCase(), re = KW[kw];
+        if (!re) continue;
+        re.lastIndex = 0;
+        var m = lo.match(re);
+        if (!m) continue;
+        var w = D.kwi[kw] || 1;
+        var first = lo.search(re);
+        sc += w * Math.sqrt(Math.min(m.length, 4)) * (first < 90 ? 1.6 : 1);
+        hitKws.push(kw);
+      }
+      var P = D.P[i];
+      if (P[4] && P[4].indexOf(ids[s]) >= 0) sc += 14;
+      if (sc > 0 && P[3]) {
+        var hl = P[3].toLowerCase();
+        for (k = 0; k < sym.en.length; k++) { var r2 = KW[sym.en[k].toLowerCase()]; if (r2) { r2.lastIndex = 0; if (r2.test(hl)) { sc *= 2.2; break; } } }
+      }
+      if (sc > 0) { matched.push(ids[s]); total += sc; }
+    }
+    for (var e = 0; e < extraRes.length; e++) {
+      var mm = lo.match(extraRes[e]);
+      if (mm) { total += 3 * Math.sqrt(Math.min(mm.length, 4)); matched.push("_x" + e); }
+    }
+    if (!total) return null;
+    if (REMEDY.test(lo)) total *= 1.35;
+    if (D.VI && D.VI[i]) total *= 1.15;
+    total *= 1 + 0.4 * (matched.length - 1);
+    var commas = (lo.match(/,/g) || []).length, words = lo.split(" ").length;
+    if (commas / words > 0.16) total *= 0.45;
+    total /= Math.pow(Math.max(lo.length, 250) / 600, 0.35);
+    return { i: i, s: total, m: matched, k: hitKws };
+  }
+
+  function herbsIn(text) {
+    var out = [], taken = text;
+    for (var h = 0; h < HERB_RE.length; h++) {
+      if (HERB_RE[h][1].test(taken)) {
+        out.push(HERB_RE[h][0]);
+        taken = taken.replace(new RegExp(HERB_RE[h][1].source, "gi"), " ");
+      }
+    }
+    return out;
+  }
+
+  function search(input, opts) {
+    opts = opts || {};
+    var q = parse(input);
+    var extra = q.ids.length ? (q.herbsEn || []).map(function (w) { return new RegExp("\\b" + esc(w), "g"); }) : q.rest.filter(function (w) { return w.length > 2; }).map(function (w) { return new RegExp("\\b" + esc(w), "g"); });
+    var res = [];
+    for (var i = 0; i < D.P.length; i++) {
+      if (opts.book != null && opts.book !== "" && D.P[i][0] !== +opts.book) continue;
+      var r = scorePassage(i, q.ids, extra);
+      if (r) res.push(r);
+    }
+    res.sort(function (a, b) { return b.s - a.s; });
+    // herb tally over top results
+    var tally = {};
+    res.slice(0, 60).forEach(function (r, rank) {
+      herbsIn(D.P[r.i][2] + " " + D.P[r.i][3]).forEach(function (h) {
+        var vi = D.herbs[h];
+        if (!tally[vi]) tally[vi] = { vi: vi, en: h, n: 0, w: 0 };
+        tally[vi].n++; tally[vi].w += r.s;
+      });
+    });
+    var herbs = Object.keys(tally).map(function (k) { return tally[k]; }).sort(function (a, b) { return b.w - a.w; });
+    return { q: q, results: res, herbs: herbs };
+  }
+
+  return { init: init, search: search, parse: parse, herbsIn: herbsIn, norm: norm, kwRe: kwRe, get D() { return D; } };
+})();
+if (typeof module !== "undefined") module.exports = Engine;
+</script>
+<script>// Thư viện tóm tắt tiếng Việt: tìm bài thuốc theo triệu chứng trong các bản tóm tắt
+var Lib = (function () {
+  // Từ khoá tiếng Việt (có dấu) xuất hiện trong bản tóm tắt, theo mã triệu chứng của lexicon
+  var VT = {
+    cough: ["ho", "ho khan", "ho có đờm", "ho đờm", "giảm ho", "ho gà", "long đờm", "siro ho", "ho mãn"],
+    fever: ["sốt", "hạ sốt", "sốt cao", "ra mồ hôi"],
+    runny: ["sổ mũi", "chảy mũi", "chảy nước mũi", "đờm"],
+    stuffy: ["nghẹt mũi", "nghẹt", "sung huyết", "thông mũi", "xông hơi", "hít hơi"],
+    sinus: ["xoang", "viêm xoang", "nghẹt xoang"],
+    throat: ["đau họng", "viêm họng", "súc họng", "rát họng", "khàn tiếng", "viêm thanh quản", "viêm amidan", "amidan", "họng"],
+    cold: ["cảm", "cúm", "cảm lạnh", "cảm cúm", "chớm cảm"],
+    headache: ["đau đầu", "đau nửa đầu", "nhức đầu"],
+    bronchitis: ["viêm phế quản", "phế quản", "hen", "khó thở", "khò khè", "viêm phổi", "hô hấp", "phổi"],
+    ear: ["đau tai", "viêm tai", "nhiễm trùng tai", "tai"],
+    toothache: ["đau răng", "sâu răng", "viêm lợi", "đau lợi", "sưng lợi", "nhiệt miệng", "lở miệng", "loét miệng", "răng"],
+    indigestion: ["khó tiêu", "đầy hơi", "đầy bụng", "chướng bụng", "tiêu hóa"],
+    stomachache: ["đau bụng", "đau dạ dày", "viêm dạ dày", "loét dạ dày", "dạ dày", "đau quặn", "colic"],
+    heartburn: ["ợ nóng", "ợ chua", "trào ngược", "axit dạ dày"],
+    nausea: ["buồn nôn", "nôn", "say xe", "ốm nghén"],
+    diarrhea: ["tiêu chảy", "kiết lỵ", "lỵ"],
+    constipation: ["táo bón", "nhuận tràng"],
+    hemorrhoid: ["trĩ"],
+    insomnia: ["mất ngủ", "khó ngủ", "giấc ngủ", "an thần", "ngủ"],
+    anxiety: ["lo âu", "căng thẳng", "stress", "bồn chồn", "hồi hộp", "thần kinh", "trầm cảm"],
+    fatigue: ["mệt mỏi", "mệt", "suy nhược", "năng lượng", "sức bền", "suy thượng thận"],
+    joint: ["đau khớp", "viêm khớp", "khớp", "gút", "thấp khớp"],
+    muscle: ["đau cơ", "chuột rút", "bong gân", "căng cơ", "co thắt cơ", "đau mình"],
+    wound: ["vết thương", "vết cắt", "trầy xước", "cầm máu", "vết loét", "nhiễm trùng da"],
+    burn: ["bỏng", "cháy nắng"],
+    bruise: ["bầm", "bầm tím", "tụ máu"],
+    rash: ["phát ban", "ngứa", "mề đay", "viêm da", "chàm", "thường xuân độc", "kích ứng da", "rôm sảy"],
+    acne: ["mụn", "mụn trứng cá", "nhọt"],
+    fungal: ["nấm", "nấm chân", "nấm móng", "hắc lào", "nấm men", "candida", "nấm bẹn"],
+    insectbite: ["côn trùng cắn", "côn trùng đốt", "ong đốt", "muỗi", "vết cắn", "rắn cắn"],
+    allergy: ["dị ứng", "histamine", "sổ mũi"],
+    uti: ["tiết niệu", "bàng quang", "viêm bàng quang", "sỏi thận", "tiểu buốt", "lợi tiểu", "thận"],
+    menstrual: ["kinh nguyệt", "đau bụng kinh", "mãn kinh", "bốc hỏa", "rong kinh", "tiền kinh nguyệt", "điều kinh", "ra kinh"],
+    bloodpressure: ["huyết áp", "huyết áp cao", "cao huyết áp"],
+    cholesterol: ["cholesterol", "mỡ máu", "tim mạch", "xơ vữa", "tim", "triglyceride"],
+    diabetes: ["tiểu đường", "đường huyết", "insulin"],
+    immune: ["miễn dịch", "tăng miễn dịch", "đề kháng", "phòng cảm"],
+    liver: ["gan", "giải độc", "thải độc", "túi mật", "tiết mật", "viêm gan"],
+    dizziness: ["chóng mặt", "hoa mắt", "say độ cao"],
+    eye: ["mắt", "rửa mắt", "viêm kết mạc", "đau mắt"],
+    coldsore: ["mụn rộp", "herpes", "zona"],
+    wart: ["mụn cóc"],
+    hangover: ["say rượu", "nghiện rượu", "thèm rượu"],
+    parasite: ["giun", "sán", "ký sinh trùng", "giun kim", "giun đũa", "sán dây"],
+    poorcirc: ["tuần hoàn", "tay chân lạnh", "giãn tĩnh mạch", "cước"],
+    hair: ["rụng tóc", "gàu", "tóc", "da đầu", "chấy"],
+    nosebleed: ["chảy máu cam", "cầm máu"],
+    hiccup: ["nấc"],
+    memory: ["trí nhớ", "tập trung", "sa sút trí tuệ", "alzheimer", "não"],
+    inflammation: ["viêm", "sưng", "chống viêm", "phù"],
+    heartattack: ["đau thắt ngực", "nhồi máu", "đột quỵ", "tim"],
+    bleeding: ["cầm máu", "chảy máu", "xuất huyết"]
+  };
+  var RECIPE = /^(cách|trà|nước|cồn|thuốc mỡ|siro|dầu|giấm|bột|viên|súp|chiết|kem|liều|tinh dầu|đắp|hỗn hợp|công thức|xông)/i;
+  var L, N = [], NT = [], NLI = [], LABEL = [];
+
+  function low(s) { return " " + String(s).toLowerCase().normalize("NFC").replace(/<[^>]+>/g, " ").replace(/\bho (wood|leaf)/g, "ho$1").replace(/sốt (pesto|mè|cà|kem|chanh|bơ|miso|tiêu|cay|dầu|nấm|tỏi|vang|táo|đậu|mayo|tương|bbq)/g, "xốt $1").replace(/[^\p{L}\p{N}]+/gu, " ") + " "; }
+  function fold(s) { return low(s).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d"); }
+  function stripTags(s) { return String(s).replace(/<[^>]+>/g, ""); }
+
+  function init(lib) {
+    L = lib;
+    L.E.forEach(function (e, i) {
+      N[i] = low(e[2] + " " + e[5] + " " + e[6].join(" "));
+      NT[i] = fold(e[2] + " " + e[1]);
+      NLI[i] = e[6].map(low);
+      LABEL[i] = e[6].map(function (li) { var m = li.match(/^<strong>(.*?)<\/strong>/); return m ? low(m[1]) : ""; });
+    });
+  }
+  function count(hay, t) { var n = 0, k = 0; while ((k = hay.indexOf(t, k)) >= 0) { n++; k += t.length; } return n; }
+
+  // Tìm theo mã triệu chứng (từ Engine.parse) + từ thêm
+  function bySymptoms(ids, extra) {
+    if (!L) return [];
+    var res = [];
+    for (var i = 0; i < L.E.length; i++) {
+      var score = 0, hitLi = {}, matched = 0;
+      ids.forEach(function (id) {
+        var terms = (VT[id] || []).map(function (t) { return low(t); }), sc = 0;
+        terms.forEach(function (t) {
+          var c = count(N[i], t);
+          if (!c) return;
+          sc += Math.min(c, 3) * (t.length > 6 ? 1.3 : 1);
+          LABEL[i].forEach(function (lb, j) { if (lb.indexOf(t) >= 0) { sc += 6; hitLi[j] = 1; } });
+          NLI[i].forEach(function (x, j) { if (!hitLi[j] && x.indexOf(t) >= 0 && LABEL[i][j].indexOf(t) < 0 && !RECIPE.test(stripTags(L.E[i][6][j]))) hitLi[j] = hitLi[j] || 0.5; });
+        });
+        if (sc > 0) { matched++; score += sc; }
+      });
+      (extra || []).forEach(function (w) { var t = low(w); var c = count(N[i], t); if (c) { score += 2 * Math.min(c, 3); matched++; if (count(NT[i], fold(w))) score += 8; } });
+      if (!score) continue;
+      score *= 1 + 0.6 * (matched - 1);
+      // chỉ tính mục có ít nhất một gạch đầu dòng gọi đúng tên bệnh (tránh nhắc thoáng qua)
+      var strong = Object.keys(hitLi).filter(function (j) { return hitLi[j] === 1; });
+      if (!strong.length && !(extra || []).length) continue;
+      res.push({ i: i, s: score, li: strong.map(Number) });
+    }
+    res.sort(function (a, b) { return b.s - a.s; });
+    return res;
+  }
+
+  // Tìm tự do (tên cây, tên bệnh) không dấu cũng được
+  function free(q, book) {
+    var f = fold(q).trim(); if (!f) return [];
+    var words = f.split(" ").filter(Boolean), res = [];
+    for (var i = 0; i < L.E.length; i++) {
+      if (book !== "" && book != null && L.E[i][0] !== +book) continue;
+      var all = N[i].normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d"), s = 0, ok = true;
+      words.forEach(function (w) { var c = count(all, " " + w); if (!c) ok = false; s += Math.min(c, 4); if (count(NT[i], " " + w)) s += 10; });
+      if (!ok) continue;
+      if (count(NT[i], " " + f + " ")) s += 30;
+      res.push({ i: i, s: s, li: [] });
+    }
+    res.sort(function (a, b) { return b.s - a.s; });
+    return res;
+  }
+
+  function isRecipe(li) { return RECIPE.test(stripTags(li)); }
+  function isWarn(li) { return /^(cảnh báo|không dùng khi|lưu ý)/i.test(stripTags(li)); }
+
+  return { init: init, bySymptoms: bySymptoms, free: free, isRecipe: isRecipe, isWarn: isWarn, VT: VT, get L() { return L; } };
+})();
+if (typeof module !== "undefined") module.exports = Lib;
+</script>
+<script>
+// ---------- Chặn sao chép nội dung ----------
+(function () {
+  function allow(t) { return t && t.closest && t.closest("textarea,input,select"); }
+  ["copy", "cut", "contextmenu", "selectstart", "dragstart"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { if (!allow(e.target)) e.preventDefault(); }, true);
+  });
+  document.addEventListener("keydown", function (e) {
+    var k = (e.key || "").toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && "cxaspu".indexOf(k) >= 0 && k && !allow(e.target)) e.preventDefault();
+  }, true);
+})();
+
+// ---------- Giải mã dữ liệu ----------
+function loadData() {
+  var KEY = "/*KEY*/", s = document.getElementById("dat").textContent.trim();
+  var bin = atob(s), b = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) b[i] = bin.charCodeAt(i) ^ KEY.charCodeAt(i % KEY.length);
+  document.getElementById("dat").textContent = "";
+  var ds = new DecompressionStream("deflate-raw");
+  return new Response(new Blob([b]).stream().pipeThrough(ds)).text().then(JSON.parse);
+}
+
+var $ = function (id) { return document.getElementById(id); };
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || "null"); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
+function slug(s) { return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48); }
+function plain(h) { var d = document.createElement("div"); d.innerHTML = h; return d.textContent; }
+
+// ---------- Lượt chọn ----------
+// Có db của Claude: đếm chung cho mọi người có quyền ghi; không có: chỉ lưu trên máy này.
+var Votes = {
+  mine: store("thaoduoc_votes") || {}, server: {}, counts: {}, shared: false, db: null, uid: null, canWrite: true, q: Promise.resolve(),
+  count: function (k) {
+    if (!this.shared) return this.mine[k] ? 1 : 0;
+    return (this.counts[k] || 0) + (this.mine[k] && !this.server[k] ? 1 : 0) - (!this.mine[k] && this.server[k] ? 1 : 0);
+  },
+  toggle: function (k) {
+    if (this.mine[k]) delete this.mine[k]; else this.mine[k] = Date.now();
+    store("thaoduoc_votes", this.mine);
+    this.push();
+  },
+  push: function () {
+    var V = this;
+    if (!V.db || !V.uid || !V.canWrite) return;
+    var body = { p: Object.assign({}, V.mine), t: Date.now() };
+    V.q = V.q.then(function () { return V.db.doc("votes/" + V.uid).set(body); }).catch(function () { V.canWrite = false; });
+  },
+  init: function (onChange) {
+    var V = this;
+    if (!window.claude || !window.claude.use) return;
+    Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+      var db = r[0], user = r[1];
+      if (!db) return;
+      return (user ? user.id() : Promise.resolve(null)).then(function (uid) {
+        V.db = db; V.uid = uid;
+        var first = true;
+        db.collection("votes").onSnapshot(function (snap) {
+          var c = {}, srv = {};
+          snap.docs.forEach(function (d) {
+            var p = (d.data() || {}).p || {};
+            Object.keys(p).forEach(function (k) { c[k] = (c[k] || 0) + 1; });
+            if (uid && d.id === uid) srv = p;
+          });
+          V.counts = c; V.server = srv; V.shared = true;
+          if (first) {   // gộp lựa chọn đã lưu trên máy với lựa chọn trên máy chủ
+            first = false;
+            var add = false;
+            Object.keys(srv).forEach(function (k) { if (!V.mine[k]) { V.mine[k] = srv[k]; } });
+            Object.keys(V.mine).forEach(function (k) { if (!srv[k]) add = true; });
+            store("thaoduoc_votes", V.mine);
+            if (add) V.push();
+          }
+          onChange();
+        }, function () { });
+      });
+    }).catch(function () { });
+  }
+};
+
+// ---------- Tạo danh sách lựa chọn ----------
+var LV_NAME = { 1: "Dễ", 2: "Vừa", 3: "Khó" };
+var LV_HEAD = { 1: "Cách dễ làm", 2: "Cách mức vừa", 3: "Cách khó hơn" };
+var LV_DESC = { 1: "Nguyên liệu dễ kiếm, làm nhanh tại nhà.", 2: "Cần mua thêm thảo dược, tinh dầu hoặc cần đun nấu, pha chế.", 3: "Cây khó kiếm ở Việt Nam, cách làm cầu kỳ hoặc cần thận trọng cao." };
+var ACC = { 1: "Nguyên liệu dễ kiếm", 2: "Cần mua thêm", 3: "Cây hoang dã, khó kiếm ở VN" };
+var PREP = { 1: "Làm nhanh", 2: "Cần pha chế, đun nấu", 3: "Pha chế lâu, cầu kỳ" };
+var GCHIP = { 1: "Dễ kiếm, làm nhanh", 2: "Cần mua thêm hoặc pha chế", 3: "Khó kiếm hoặc cầu kỳ" };
+
+function bookShort(t) { return t.length > 34 ? t.slice(0, 32) + "…" : t; }
+function labelOf(li) { var m = li.match(/^<strong>(.*?)<\/strong>/); return m ? plain(m[1]).replace(/[:：]\s*$/, "").trim() : ""; }
+function summaryOf(li) { return plain(li.replace(/<br>/g, " ")).replace(/\s+/g, " ").trim(); }
+
+function buildOptions(G, sym, words) {
+  var L = Lib.L, opts = [], seen = {};
+  function add(o) { if (seen[o.id]) return; seen[o.id] = 1; o.key = sym + "|" + o.id; opts.push(o); }
+  var gid = sym, g = G.guide[gid];
+  if (g && g.ref) { gid = g.ref; g = G.guide[gid]; }
+  if (g) g.items.forEach(function (it, n) {
+    add({ id: "g-" + gid + "-" + slug(it.t), title: it.t, sub: "Tóm tắt nhanh từ nhiều sách", sum: it.d,
+      body: "<p>" + esc(it.d) + "</p>", warn: it.w ? [esc(it.w)] : [], lv: it.lv, chips: [GCHIP[it.lv]],
+      src: it.src.map(function (s) { return bookShort(G.gbooks[s[0]]) + ", tr. " + s[1]; }).join(" · "), g: 1, s: 1000 - n });
+  });
+  var res = sym === "_q" ? Lib.bySymptoms([], words) : Lib.bySymptoms([sym], []);
+  res.forEach(function (x) {
+    var e = L.E[x.i], m = e[7], lis = e[6], bt = L.books[e[0]].t;
+    if (!m.o) return;
+    var src = bookShort(bt) + (e[4] ? ", tr. " + e[4] : "");
+    if (m.h) {
+      var name = e[2].split(" (")[0], latin = (e[2].match(/\((.*)\)\s*$/) || [, ""])[1];
+      var main = x.li.slice(), rec = [], warn = [];
+      lis.forEach(function (li, j) {
+        if (Lib.isWarn(li)) warn.push(li.replace(/^<strong>(Cảnh báo|Lưu ý)[^<]*<\/strong>\s*/i, ""));
+        else if (main.indexOf(j) < 0 && Lib.isRecipe(li)) rec.push(j);
+      });
+      if (!main.length && !rec.length) main = lis.map(function (_, j) { return j; }).filter(function (j) { return !Lib.isWarn(lis[j]); });
+      var use = main.concat(rec), prep = 3;
+      use.forEach(function (j) { prep = Math.min(prep, m.r[j] || 1); });
+      if (!use.length) prep = 1;
+      var acc = m.a || prep, lv = Math.max(acc, prep);
+      var chips = [ACC[acc] || "", PREP[prep]].filter(Boolean);
+      if (m.x) { lv = 3; chips.push("⚠️ Có độc tính, cần thận trọng"); }
+      var sum = main.length ? summaryOf(lis[main[0]]) : summaryOf(lis[rec[0]] || "");
+      add({ id: "h-" + e[0] + "-" + slug(name), title: name, sub: latin + " · " + bookShort(bt), sum: sum,
+        body: (e[5] && !x.li.length ? '<p class="intro">' + e[5] + "</p>" : "") + "<ul>" + use.map(function (j) { return '<li class="' + (Lib.isRecipe(lis[j]) ? "rc" : "") + '">' + lis[j] + "</li>"; }).join("") + "</ul>",
+        warn: warn, lv: lv, chips: chips, src: src, s: x.s, tox: m.x });
+    } else {
+      var idx = x.li.length ? x.li : [];
+      if (!idx.length) {
+        idx = lis.map(function (_, j) { return j; });
+        var p0 = 3; idx.forEach(function (j) { p0 = Math.min(p0, m.r[j] || 1); });
+        add({ id: "t-" + e[0] + "-" + slug(e[2]), title: e[2], sub: bookShort(bt), sum: summaryOf(lis[0] || e[5] || ""),
+          body: (e[5] ? '<p class="intro">' + e[5] + "</p>" : "") + "<ul>" + lis.map(function (li) { return "<li>" + li + "</li>"; }).join("") + "</ul>",
+          warn: [], lv: Math.max(p0, 1), chips: [PREP[p0]], src: src, s: x.s });
+        return;
+      }
+      idx.forEach(function (j, n) {
+        var lb = labelOf(lis[j]) || e[2], p = m.r[j] || 1;
+        add({ id: "t-" + e[0] + "-" + slug(e[2]) + "-" + slug(lb), title: lb, sub: e[2] + " · " + bookShort(bt), sum: summaryOf(lis[j]),
+          body: "<ul><li>" + lis[j] + "</li></ul>", warn: [], lv: p, chips: [PREP[p]], src: src, s: x.s - n * 0.01 });
+      });
+    }
+  });
+  return opts;
+}
+
+// ---------- Ứng dụng ----------
+function main(G) {
+  Engine.init({ lex: G.lex, herbs: G.herbs, kwi: {}, P: [] });
+  Lib.init(G.lib);
+  $("go").disabled = false; $("go").textContent = "Tìm cách chữa";
+  $("nbooks").textContent = G.lib.books.length;
+  $("booklist").innerHTML = G.lib.books.map(function (b) { return "<li>" + esc(b.t) + "</li>"; }).join("");
+
+  var QUICK = ["Ho", "Sốt", "Chảy mũi", "Nghẹt mũi", "Đau họng", "Cảm cúm", "Viêm xoang", "Đau đầu", "Mất ngủ", "Đau bụng", "Tiêu chảy", "Táo bón", "Ợ chua", "Buồn nôn", "Căng thẳng", "Đau khớp", "Bỏng", "Vết thương", "Ngứa", "Dị ứng"];
+  var S = { syms: [], cur: null, opts: {}, show: {}, more: {}, open: {}, words: [] };
+
+  function symName(id) { if (id === "_q") return "“" + S.words.join(" ") + "”"; for (var i = 0; i < G.lex.length; i++) if (G.lex[i].id === id) return G.lex[i].vi; return id; }
+
+  // chip nhanh
+  $("quick").innerHTML = QUICK.map(function (w) { return '<button class="chip" data-w="' + w + '">' + w + "</button>"; }).join("");
+  function syncChips() {
+    var parts = $("q").value.split(",").map(function (s) { return s.trim().toLowerCase(); });
+    [].forEach.call(document.querySelectorAll("#quick .chip"), function (c) { c.classList.toggle("on", parts.indexOf(c.dataset.w.toLowerCase()) >= 0); });
+  }
+  $("quick").addEventListener("click", function (e) {
+    var c = e.target.closest(".chip"); if (!c) return;
+    var w = c.dataset.w, parts = $("q").value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+    var i = parts.map(function (s) { return s.toLowerCase(); }).indexOf(w.toLowerCase());
+    if (i >= 0) parts.splice(i, 1); else parts.push(w);
+    $("q").value = parts.join(", "); syncChips();
+  });
+  $("q").addEventListener("input", syncChips);
+  $("q").addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); run(); } });
+  $("go").addEventListener("click", function () { run(); });
+  $("clear").addEventListener("click", function () { $("q").value = ""; syncChips(); $("out").innerHTML = ""; $("q").focus(); });
+
+  function renderRecent() {
+    var r = store("thaoduoc_recent") || [];
+    $("recent").innerHTML = r.length ? "Gần đây: " + r.map(function (x) { return '<a href="#" data-q="' + esc(x) + '">' + esc(x) + "</a>"; }).join("") : "";
+  }
+  $("recent").addEventListener("click", function (e) { var a = e.target.closest("a"); if (!a) return; e.preventDefault(); $("q").value = a.dataset.q; syncChips(); run(); });
+  renderRecent();
+
+  function run() {
+    var input = $("q").value.trim();
+    if (!input) { $("q").focus(); return; }
+    var q = Engine.parse(input);
+    var ids = q.ids.slice();
+    var resp = ids.filter(function (id) { return ["cough", "fever", "runny", "stuffy", "throat"].indexOf(id) >= 0; }).length;
+    if (resp >= 2 && ids.indexOf("cold") < 0) ids.push("cold");
+    S.words = [];
+    if (!ids.length) {
+      var vi = (q.herbsEn || []).map(function (en) { return G.herbs[en] ? G.herbs[en].split(" / ")[0] : en; });
+      S.words = vi.length ? vi : q.rest.filter(function (w) { return w.length > 1; });
+      if (S.words.length) ids = ["_q"];
+    }
+    S.syms = ids; S.cur = ids[0] || null; S.q = q; S.opts = {}; S.show = {}; S.more = {}; S.open = {};
+    var r = (store("thaoduoc_recent") || []).filter(function (x) { return x !== input; }); r.unshift(input); store("thaoduoc_recent", r.slice(0, 6)); renderRecent();
+    render();
+    if (document.activeElement) document.activeElement.blur();
+    setTimeout(function () { $("out").scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+  }
+
+  function optsOf(sym) { return S.opts[sym] || (S.opts[sym] = buildOptions(G, sym, S.words)); }
+
+  function render() {
+    var h = "";
+    if (!S.syms.length) {
+      $("out").innerHTML = '<div class="empty">Chưa nhận ra triệu chứng.<br>Thử gõ “ho”, “sốt”, “đau họng”, hoặc tên cây như “gừng”.</div>';
+      return;
+    }
+    var flags = S.syms.filter(function (id) { return G.redflag[id]; });
+    if (flags.length) {
+      h += '<div class="alert"><b>Cần đi khám ngay nếu có:</b><ul>';
+      flags.forEach(function (id) { h += "<li>" + esc(G.redflag[id]) + "</li>"; });
+      h += "</ul></div>";
+    }
+    if (S.syms.length > 1) {
+      h += '<div class="symtabs" id="symtabs">' + S.syms.map(function (id) { return '<button data-s="' + id + '" class="' + (id === S.cur ? "on" : "") + '">' + esc(symName(id)) + "</button>"; }).join("") + "</div>";
+    }
+    h += '<div id="opts"></div>';
+    $("out").innerHTML = h;
+    renderOpts();
+  }
+
+  function countText(k) {
+    var n = Votes.count(k);
+    if (!n) return "";
+    if (!Votes.shared) return '<span class="vc">✓ Bạn đã chọn</span>';
+    return '<span class="vc">👥 ' + n + "</span>";
+  }
+
+  function card(o, pinned) {
+    var open = S.open[o.key], picked = !!Votes.mine[o.key];
+    return '<div class="opt' + (open ? " open" : "") + (pinned ? " pin" : "") + '" data-k="' + esc(o.key) + '">' +
+      '<button class="oh"><span class="lvl l' + o.lv + '">' + LV_NAME[o.lv] + '</span><span class="ot">' + esc(o.title) + "</span>" + countText(o.key) +
+      '<span class="os">' + esc(o.sub) + "</span>" + (open ? "" : '<span class="osum">' + esc(o.sum) + "</span>") + "</button>" +
+      (open ? '<div class="ob"><div class="tagline">' + o.chips.map(function (c) { return '<span class="tag' + (c.indexOf("⚠️") === 0 ? " warn" : "") + '">' + esc(c) + "</span>"; }).join("") + "</div>" +
+        '<div class="obody">' + o.body + "</div>" +
+        (o.warn.length ? '<div class="wbox"><b>⚠️ Lưu ý</b>' + o.warn.map(function (w) { return "<div>" + w + "</div>"; }).join("") + "</div>" : "") +
+        '<div class="src">Nguồn: ' + esc(o.src) + "</div>" +
+        '<button class="pick' + (picked ? " on" : "") + '">' + (picked ? "✓ Bạn đã chọn cách này · bấm để bỏ" : "Tôi chọn cách này") + "</button></div>" : "") +
+      "</div>";
+  }
+
+  function renderOpts() {
+    var box = $("opts"); if (!box || !S.cur) return;
+    var sym = S.cur, all = optsOf(sym);
+    if (!all.length) { box.innerHTML = '<div class="empty">Chưa có bài thuốc nào cho “' + esc(symName(sym)) + '” trong các bản tóm tắt.</div>'; return; }
+    var sorted = all.slice().sort(function (a, b) { return (Votes.count(b.key) - Votes.count(a.key)) || ((b.g || 0) - (a.g || 0)) || (b.s - a.s); });
+    // đề xuất: cách được chọn nhiều nhất
+    var top = sorted.slice().sort(function (a, b) { return Votes.count(b.key) - Votes.count(a.key); })[0];
+    var topN = top ? Votes.count(top.key) : 0, pin = null;
+    if (topN >= (Votes.shared ? 2 : 1)) pin = top;
+    var byLv = { 1: [], 2: [], 3: [] };
+    sorted.forEach(function (o) { if (o !== pin) byLv[o.lv].push(o); });
+    var firstLv = [1, 2, 3].filter(function (l) { return byLv[l].length; })[0];
+    var show = S.show[sym] || (S.show[sym] = {}); show[firstLv] = true;
+    var more = S.more[sym] || (S.more[sym] = { 1: 4, 2: 4, 3: 4 });
+
+    var h = '<h2>Cách chữa: ' + esc(symName(sym)) + '</h2><p class="sub">Sắp xếp từ dễ đến khó. Bấm vào một cách để xem cách làm, rồi bấm “Tôi chọn cách này” nếu bạn dùng nó.</p>';
+    if (pin) {
+      h += '<div class="pinhead">' + (Votes.shared ? "⭐ Được nhiều người chọn nhất" : "⭐ Cách bạn đã chọn trước đây") + "</div>" + card(pin, true);
+    }
+    [1, 2, 3].forEach(function (l) {
+      var list = byLv[l]; if (!list.length) return;
+      if (!show[l]) {
+        h += '<button class="lvbtn l' + l + '" data-l="' + l + '">+ Hiện thêm ' + list.length + " cách mức " + LV_NAME[l].toLowerCase() + '<small>' + LV_DESC[l] + "</small></button>";
+        return;
+      }
+      h += '<div class="lvhead"><span class="lvl l' + l + '">' + LV_NAME[l] + "</span> " + LV_HEAD[l] + " <small>(" + list.length + ")</small></div>";
+      h += list.slice(0, more[l]).map(function (o) { return card(o); }).join("");
+      if (list.length > more[l]) h += '<button class="btn ghost more" data-m="' + l + '">Xem thêm ' + Math.min(6, list.length - more[l]) + " cách " + LV_NAME[l].toLowerCase() + "</button>";
+      if (l > firstLv) h += '<button class="hidelv" data-h="' + l + '">Ẩn mức ' + LV_NAME[l].toLowerCase() + "</button>";
+    });
+    h += '<p class="statnote">' + (Votes.shared ? "Số 👥 là số người đã chọn cách đó trong app. Cách được chọn nhiều nhất sẽ được đề xuất lên đầu." : "Lựa chọn của bạn được lưu trên máy này và cách bạn chọn sẽ được đưa lên đầu ở lần sau.") + "</p>";
+    box.innerHTML = h;
+  }
+
+  $("out").addEventListener("click", function (e) {
+    var t = e.target;
+    var st = t.closest("#symtabs button");
+    if (st) { S.cur = st.dataset.s; [].forEach.call($("symtabs").children, function (b) { b.classList.toggle("on", b === st); }); renderOpts(); return; }
+    var lb = t.closest(".lvbtn"); if (lb) { S.show[S.cur][lb.dataset.l] = true; renderOpts(); return; }
+    var hb = t.closest(".hidelv"); if (hb) { S.show[S.cur][hb.dataset.h] = false; renderOpts(); return; }
+    var mb = t.closest("[data-m]"); if (mb) { S.more[S.cur][mb.dataset.m] += 6; renderOpts(); return; }
+    var op = t.closest(".opt"); if (!op) return;
+    var k = op.dataset.k;
+    if (t.closest(".pick")) { Votes.toggle(k); renderOpts(); return; }
+    if (t.closest(".oh")) { S.open[k] = !S.open[k]; renderOpts(); }
+  });
+
+  Votes.init(function () { if (S.cur) renderOpts(); });
+
+  // ---------- Thư viện tiếng Việt ----------
+  function liHtml(li) { return '<li class="' + (Lib.isWarn(li) ? "wn" : (Lib.isRecipe(li) ? "rc" : "")) + '">' + li + "</li>"; }
+  function libCard(i) {
+    var e = Lib.L.E[i], b = Lib.L.books[e[0]];
+    return '<div class="card lib open"><h3>' + e[2] + '</h3><div class="meta">' + esc(b.t) + (e[4] ? " · tr. " + esc(e[4]) : "") + "</div>" +
+      (e[5] ? '<div class="intro">' + e[5] + "</div>" : "") + "<ul>" + e[6].map(liHtml).join("") + "</ul></div>";
+  }
+  function titem(i) { var e = Lib.L.E[i]; return '<button class="titem" data-i="' + i + '">' + e[2] + (e[4] ? " <small>· tr. " + esc(e[4]) + "</small>" : "") + "</button>"; }
+  $("lout").addEventListener("click", function (e) {
+    var ti = e.target.closest(".titem"); if (!ti) return;
+    var d = document.createElement("div"); d.innerHTML = libCard(+ti.dataset.i); ti.replaceWith(d.firstChild);
+  });
+  $("tabs").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    [].forEach.call($("tabs").children, function (x) { x.classList.toggle("on", x === b); });
+    $("pane-sym").classList.toggle("hidden", b.dataset.t !== "sym");
+    $("pane-lib").classList.toggle("hidden", b.dataset.t !== "lib");
+    if (b.dataset.t === "lib" && !$("lout").innerHTML) libBrowse();
+  });
+  var L = G.lib;
+  $("lbook").innerHTML = '<option value="">Tất cả sách (' + L.E.length + " mục)</option>" + L.books.map(function (b, i) {
+    var n = L.E.filter(function (e) { return e[0] === i; }).length; return '<option value="' + i + '">' + esc(b.t) + " (" + n + ")</option>"; }).join("");
+  $("lstat").textContent = L.books.length + " sách đã có bản tóm tắt tiếng Việt · " + L.E.length + " mục. Bấm vào tên để xem.";
+  var lt;
+  $("lq").addEventListener("input", function () { clearTimeout(lt); lt = setTimeout(libBrowse, 200); });
+  $("lbook").addEventListener("change", libBrowse);
+  function libBrowse() {
+    var q = $("lq").value.trim(), bk = $("lbook").value, h = "";
+    if (q) {
+      var r = Lib.free(q, bk);
+      h = '<p class="sub">' + r.length + " mục có “" + esc(q) + "”.</p>" + r.slice(0, 60).map(function (x) { return titem(x.i); }).join("");
+      if (!r.length) h = '<div class="empty">Không thấy mục nào. Thử tên khác (có dấu hoặc không dấu).</div>';
+    } else {
+      var sec = null;
+      L.E.forEach(function (e, i) {
+        if (bk !== "" && e[0] !== +bk) return;
+        var s = L.books[e[0]].t + " — " + e[1];
+        if (s !== sec) { sec = s; h += '<div class="sec">' + esc(e[1] || L.books[e[0]].t) + "</div>"; }
+        h += titem(i);
+      });
+    }
+    $("lout").innerHTML = h;
+  }
+}
+
+$("go").disabled = true;
+$("go").textContent = "Đang tải…";
+if (typeof DecompressionStream === "undefined") {
+  $("go").textContent = "Trình duyệt quá cũ — hãy cập nhật";
+} else {
+  loadData().then(main).catch(function (err) { $("go").textContent = "Lỗi tải dữ liệu — tải lại trang"; console.error(err); });
+}
+</script>
+</body>
+</html>

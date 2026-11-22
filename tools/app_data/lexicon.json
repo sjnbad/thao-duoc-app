@@ -1,0 +1,1212 @@
+{
+ "lex": [
+  {
+   "id": "cough",
+   "vi": "Ho",
+   "alias": [
+    "ho",
+    "ho khan",
+    "ho co dam",
+    "ho dam",
+    "ho gio",
+    "ho lau ngay",
+    "cough"
+   ],
+   "en": [
+    "cough",
+    "expectorant",
+    "phlegm",
+    "mucus in the chest",
+    "chesty"
+   ]
+  },
+  {
+   "id": "fever",
+   "vi": "Sốt",
+   "alias": [
+    "sot",
+    "sot cao",
+    "sot nhe",
+    "nong sot",
+    "phat sot",
+    "fever"
+   ],
+   "en": [
+    "fever",
+    "feverish",
+    "febrile",
+    "high temperature",
+    "febrifuge",
+    "sweat out"
+   ]
+  },
+  {
+   "id": "runny",
+   "vi": "Chảy nước mũi / sổ mũi",
+   "alias": [
+    "chay mui",
+    "chay nuoc mui",
+    "so mui",
+    "runny nose"
+   ],
+   "en": [
+    "runny nose",
+    "running nose",
+    "nasal discharge",
+    "catarrh",
+    "rhinitis",
+    "sneez",
+    "common cold",
+    "colds"
+   ]
+  },
+  {
+   "id": "stuffy",
+   "vi": "Nghẹt mũi",
+   "alias": [
+    "nghet mui",
+    "tac mui",
+    "ngat mui",
+    "stuffy nose",
+    "congestion"
+   ],
+   "en": [
+    "nasal congestion",
+    "congestion",
+    "congested",
+    "stuffy nose",
+    "blocked nose",
+    "decongestant",
+    "sinus congestion",
+    "catarrh",
+    "common cold",
+    "colds"
+   ]
+  },
+  {
+   "id": "sinus",
+   "vi": "Viêm xoang",
+   "alias": [
+    "viem xoang",
+    "xoang",
+    "sinus",
+    "sinusitis"
+   ],
+   "en": [
+    "sinusitis",
+    "sinus",
+    "sinuses",
+    "catarrh"
+   ]
+  },
+  {
+   "id": "throat",
+   "vi": "Đau họng / viêm họng",
+   "alias": [
+    "dau hong",
+    "viem hong",
+    "rat hong",
+    "hong dau",
+    "sung hong",
+    "viem amidan",
+    "amidan",
+    "khan tieng",
+    "mat tieng",
+    "sore throat"
+   ],
+   "en": [
+    "sore throat",
+    "throat",
+    "tonsillitis",
+    "tonsil",
+    "laryngitis",
+    "hoarse",
+    "gargle",
+    "strep"
+   ]
+  },
+  {
+   "id": "cold",
+   "vi": "Cảm lạnh / cảm cúm",
+   "alias": [
+    "cam",
+    "cam lanh",
+    "cam cum",
+    "cum",
+    "bi cam",
+    "influenza",
+    "flu",
+    "cold"
+   ],
+   "en": [
+    "common cold",
+    "colds",
+    "cold and flu",
+    "colds and flu",
+    "influenza",
+    "flu",
+    "chill"
+   ]
+  },
+  {
+   "id": "headache",
+   "vi": "Đau đầu",
+   "alias": [
+    "dau dau",
+    "nhuc dau",
+    "dau nua dau",
+    "dau nua dau migraine",
+    "migraine",
+    "headache"
+   ],
+   "en": [
+    "headache",
+    "migraine",
+    "head pain",
+    "tension headache"
+   ]
+  },
+  {
+   "id": "bronchitis",
+   "vi": "Viêm phế quản / khó thở",
+   "alias": [
+    "viem phe quan",
+    "phe quan",
+    "kho tho",
+    "hen",
+    "hen suyen",
+    "suyen",
+    "tuc nguc",
+    "bronchitis",
+    "asthma"
+   ],
+   "en": [
+    "bronchitis",
+    "bronchial",
+    "asthma",
+    "wheez",
+    "shortness of breath",
+    "respiratory infection",
+    "lungs",
+    "chest congestion"
+   ]
+  },
+  {
+   "id": "ear",
+   "vi": "Đau tai / viêm tai",
+   "alias": [
+    "dau tai",
+    "viem tai",
+    "nhuc tai",
+    "u tai",
+    "earache"
+   ],
+   "en": [
+    "earache",
+    "ear infection",
+    "ear ache",
+    "otitis",
+    "ear pain"
+   ]
+  },
+  {
+   "id": "toothache",
+   "vi": "Đau răng / nướu",
+   "alias": [
+    "dau rang",
+    "nhuc rang",
+    "sau rang",
+    "viem nuou",
+    "chay mau chan rang",
+    "loet mieng",
+    "nhiet mieng",
+    "toothache"
+   ],
+   "en": [
+    "toothache",
+    "tooth ache",
+    "gum",
+    "gingivitis",
+    "mouth ulcer",
+    "canker sore",
+    "teeth"
+   ]
+  },
+  {
+   "id": "indigestion",
+   "vi": "Khó tiêu / đầy hơi",
+   "alias": [
+    "kho tieu",
+    "day hoi",
+    "chuong bung",
+    "o hoi",
+    "an khong tieu",
+    "indigestion",
+    "bloating"
+   ],
+   "en": [
+    "indigestion",
+    "bloating",
+    "bloated",
+    "flatulence",
+    "dyspepsia",
+    "digestion",
+    "digestive"
+   ]
+  },
+  {
+   "id": "stomachache",
+   "vi": "Đau bụng / đau dạ dày",
+   "alias": [
+    "dau bung",
+    "dau da day",
+    "dau bao tu",
+    "viem da day",
+    "loet da day",
+    "dau thuong vi",
+    "co that",
+    "stomach ache"
+   ],
+   "en": [
+    "stomach ache",
+    "stomachache",
+    "stomach pain",
+    "abdominal pain",
+    "ulcer",
+    "gastritis",
+    "colic",
+    "cramps",
+    "stomach upset",
+    "upset stomach"
+   ]
+  },
+  {
+   "id": "heartburn",
+   "vi": "Ợ chua / trào ngược",
+   "alias": [
+    "o chua",
+    "trao nguoc",
+    "trao nguoc da day",
+    "nong rat da day",
+    "heartburn",
+    "reflux"
+   ],
+   "en": [
+    "heartburn",
+    "acid reflux",
+    "reflux",
+    "gerd",
+    "acidity"
+   ]
+  },
+  {
+   "id": "nausea",
+   "vi": "Buồn nôn / nôn",
+   "alias": [
+    "buon non",
+    "non",
+    "non mua",
+    "oi",
+    "say xe",
+    "say tau",
+    "nghen",
+    "nausea",
+    "vomit"
+   ],
+   "en": [
+    "nausea",
+    "nauseous",
+    "vomit",
+    "motion sickness",
+    "travel sickness",
+    "morning sickness",
+    "seasickness"
+   ]
+  },
+  {
+   "id": "diarrhea",
+   "vi": "Tiêu chảy",
+   "alias": [
+    "tieu chay",
+    "di ngoai",
+    "di long",
+    "ia chay",
+    "roi loan tieu hoa",
+    "diarrhea"
+   ],
+   "en": [
+    "diarrhea",
+    "diarrhoea",
+    "dysentery",
+    "loose stool"
+   ]
+  },
+  {
+   "id": "constipation",
+   "vi": "Táo bón",
+   "alias": [
+    "tao bon",
+    "bi tao",
+    "kho di ngoai",
+    "constipation"
+   ],
+   "en": [
+    "constipation",
+    "constipated",
+    "laxative",
+    "bowel movement"
+   ]
+  },
+  {
+   "id": "hemorrhoid",
+   "vi": "Trĩ",
+   "alias": [
+    "tri",
+    "benh tri",
+    "hemorrhoids"
+   ],
+   "en": [
+    "hemorrhoid",
+    "haemorrhoid",
+    "piles"
+   ]
+  },
+  {
+   "id": "insomnia",
+   "vi": "Mất ngủ",
+   "alias": [
+    "mat ngu",
+    "kho ngu",
+    "ngu khong ngon",
+    "thuc dem",
+    "insomnia"
+   ],
+   "en": [
+    "insomnia",
+    "sleep",
+    "sleepless",
+    "restless"
+   ]
+  },
+  {
+   "id": "anxiety",
+   "vi": "Căng thẳng / lo âu",
+   "alias": [
+    "cang thang",
+    "lo au",
+    "lo lang",
+    "stress",
+    "hoi hop",
+    "bon chon",
+    "tram cam",
+    "buon chan",
+    "anxiety",
+    "depression"
+   ],
+   "en": [
+    "anxiety",
+    "anxious",
+    "stress",
+    "nervous",
+    "nervousness",
+    "depression",
+    "panic"
+   ]
+  },
+  {
+   "id": "fatigue",
+   "vi": "Mệt mỏi / suy nhược",
+   "alias": [
+    "met moi",
+    "met",
+    "suy nhuoc",
+    "kiet suc",
+    "thieu nang luong",
+    "uoi oai",
+    "fatigue"
+   ],
+   "en": [
+    "fatigue",
+    "exhaustion",
+    "tiredness",
+    "tired",
+    "lack of energy",
+    "weakness",
+    "adaptogen"
+   ]
+  },
+  {
+   "id": "joint",
+   "vi": "Đau khớp / viêm khớp",
+   "alias": [
+    "dau khop",
+    "viem khop",
+    "thap khop",
+    "gout",
+    "gut",
+    "thoai hoa khop",
+    "dau goi",
+    "arthritis"
+   ],
+   "en": [
+    "arthritis",
+    "joint pain",
+    "rheumatism",
+    "rheumatoid",
+    "gout",
+    "osteoarthritis",
+    "joints",
+    "inflammation"
+   ]
+  },
+  {
+   "id": "muscle",
+   "vi": "Đau cơ / chuột rút / bong gân",
+   "alias": [
+    "dau co",
+    "nhuc moi",
+    "moi co",
+    "chuot rut",
+    "bong gan",
+    "cang co",
+    "dau lung",
+    "dau vai gay",
+    "muscle pain",
+    "back pain"
+   ],
+   "en": [
+    "muscle pain",
+    "sore muscles",
+    "aching muscles",
+    "muscle ache",
+    "cramp",
+    "sprain",
+    "back pain",
+    "stiff neck",
+    "muscle spasm"
+   ]
+  },
+  {
+   "id": "wound",
+   "vi": "Vết thương / vết cắt",
+   "alias": [
+    "vet thuong",
+    "vet cat",
+    "dut tay",
+    "tray xuoc",
+    "chay mau",
+    "nhiem trung vet thuong",
+    "wound",
+    "cut"
+   ],
+   "en": [
+    "wound",
+    "cuts",
+    "bleeding",
+    "scrape",
+    "graze",
+    "antiseptic",
+    "infection",
+    "styptic"
+   ]
+  },
+  {
+   "id": "burn",
+   "vi": "Bỏng / cháy nắng",
+   "alias": [
+    "bong",
+    "bong nang",
+    "chay nang",
+    "bong nuoc",
+    "burn",
+    "sunburn"
+   ],
+   "en": [
+    "burn",
+    "burns",
+    "sunburn",
+    "scald"
+   ]
+  },
+  {
+   "id": "bruise",
+   "vi": "Bầm tím",
+   "alias": [
+    "bam tim",
+    "tu mau",
+    "va dap",
+    "bruise"
+   ],
+   "en": [
+    "bruise",
+    "bruising",
+    "contusion"
+   ]
+  },
+  {
+   "id": "rash",
+   "vi": "Phát ban / ngứa / mề đay",
+   "alias": [
+    "phat ban",
+    "ngua",
+    "me day",
+    "noi man",
+    "man ngua",
+    "viem da",
+    "cham",
+    "eczema",
+    "vay nen",
+    "ham",
+    "rash",
+    "itch"
+   ],
+   "en": [
+    "rash",
+    "itch",
+    "itching",
+    "hives",
+    "eczema",
+    "dermatitis",
+    "psoriasis",
+    "poison ivy",
+    "skin irritation"
+   ]
+  },
+  {
+   "id": "acne",
+   "vi": "Mụn trứng cá",
+   "alias": [
+    "mun",
+    "mun trung ca",
+    "mun boc",
+    "mun nhot",
+    "acne"
+   ],
+   "en": [
+    "acne",
+    "pimple",
+    "blemish",
+    "spots",
+    "boils"
+   ]
+  },
+  {
+   "id": "fungal",
+   "vi": "Nấm da / nấm chân",
+   "alias": [
+    "nam",
+    "nam da",
+    "nam chan",
+    "nam mong",
+    "hac lao",
+    "lang ben",
+    "nam candida",
+    "fungus"
+   ],
+   "en": [
+    "fungal",
+    "fungus",
+    "athlete's foot",
+    "ringworm",
+    "candida",
+    "yeast infection",
+    "thrush",
+    "nail fungus"
+   ]
+  },
+  {
+   "id": "insectbite",
+   "vi": "Côn trùng cắn / muỗi đốt",
+   "alias": [
+    "con trung can",
+    "muoi dot",
+    "ong dot",
+    "kien can",
+    "bi can",
+    "insect bite",
+    "sting"
+   ],
+   "en": [
+    "insect bite",
+    "bites",
+    "sting",
+    "stings",
+    "mosquito",
+    "bee sting",
+    "spider bite"
+   ]
+  },
+  {
+   "id": "allergy",
+   "vi": "Dị ứng / viêm mũi dị ứng",
+   "alias": [
+    "di ung",
+    "viem mui di ung",
+    "hat hoi",
+    "allergy",
+    "hay fever"
+   ],
+   "en": [
+    "allergy",
+    "allergies",
+    "allergic",
+    "hay fever",
+    "histamine",
+    "antihistamine",
+    "sneez"
+   ]
+  },
+  {
+   "id": "uti",
+   "vi": "Viêm đường tiết niệu",
+   "alias": [
+    "viem duong tiet nieu",
+    "tieu buot",
+    "tieu rat",
+    "viem bang quang",
+    "tieu nhieu",
+    "soi than",
+    "than",
+    "uti"
+   ],
+   "en": [
+    "urinary tract infection",
+    "uti",
+    "bladder infection",
+    "cystitis",
+    "urinary",
+    "kidney stone",
+    "kidney",
+    "diuretic"
+   ]
+  },
+  {
+   "id": "menstrual",
+   "vi": "Đau bụng kinh / rối loạn kinh nguyệt",
+   "alias": [
+    "dau bung kinh",
+    "kinh nguyet",
+    "hanh kinh",
+    "roi loan kinh nguyet",
+    "tien man kinh",
+    "man kinh",
+    "pms",
+    "menstrual"
+   ],
+   "en": [
+    "menstrual",
+    "menstruation",
+    "period pain",
+    "pms",
+    "premenstrual",
+    "menopause",
+    "hot flash",
+    "cramps"
+   ]
+  },
+  {
+   "id": "bloodpressure",
+   "vi": "Huyết áp cao",
+   "alias": [
+    "huyet ap",
+    "huyet ap cao",
+    "cao huyet ap",
+    "tang huyet ap",
+    "hypertension",
+    "blood pressure"
+   ],
+   "en": [
+    "high blood pressure",
+    "blood pressure",
+    "hypertension"
+   ]
+  },
+  {
+   "id": "cholesterol",
+   "vi": "Mỡ máu / tim mạch",
+   "alias": [
+    "mo mau",
+    "cholesterol",
+    "tim mach",
+    "xo vua",
+    "benh tim",
+    "heart"
+   ],
+   "en": [
+    "cholesterol",
+    "heart disease",
+    "cardiovascular",
+    "circulation",
+    "atherosclerosis",
+    "heart health"
+   ]
+  },
+  {
+   "id": "diabetes",
+   "vi": "Tiểu đường / đường huyết",
+   "alias": [
+    "tieu duong",
+    "duong huyet",
+    "duong mau",
+    "dai thao duong",
+    "diabetes",
+    "blood sugar"
+   ],
+   "en": [
+    "diabetes",
+    "blood sugar",
+    "insulin",
+    "glucose",
+    "diabetic"
+   ]
+  },
+  {
+   "id": "immune",
+   "vi": "Tăng sức đề kháng",
+   "alias": [
+    "suc de khang",
+    "mien dich",
+    "tang de kham",
+    "tang suc de khang",
+    "de khang",
+    "hay om",
+    "immune"
+   ],
+   "en": [
+    "immune system",
+    "immunity",
+    "immune",
+    "boost the immune"
+   ]
+  },
+  {
+   "id": "liver",
+   "vi": "Gan / giải độc",
+   "alias": [
+    "gan",
+    "giai doc",
+    "men gan",
+    "nong gan",
+    "detox",
+    "liver"
+   ],
+   "en": [
+    "liver",
+    "detox",
+    "detoxif",
+    "gallbladder",
+    "jaundice",
+    "bile"
+   ]
+  },
+  {
+   "id": "dizziness",
+   "vi": "Chóng mặt",
+   "alias": [
+    "chong mat",
+    "hoa mat",
+    "choang vang",
+    "dizziness",
+    "vertigo"
+   ],
+   "en": [
+    "dizziness",
+    "dizzy",
+    "vertigo",
+    "fainting",
+    "lightheaded"
+   ]
+  },
+  {
+   "id": "eye",
+   "vi": "Đau mắt / viêm kết mạc",
+   "alias": [
+    "dau mat",
+    "dau mat do",
+    "viem ket mac",
+    "mat do",
+    "kho mat",
+    "eye"
+   ],
+   "en": [
+    "conjunctivitis",
+    "pink eye",
+    "eye infection",
+    "sore eyes",
+    "eyewash",
+    "eye"
+   ]
+  },
+  {
+   "id": "coldsore",
+   "vi": "Mụn rộp / herpes",
+   "alias": [
+    "mun rop",
+    "herpes",
+    "zona",
+    "gioi leo",
+    "cold sore",
+    "shingles"
+   ],
+   "en": [
+    "cold sore",
+    "herpes",
+    "shingles",
+    "fever blister"
+   ]
+  },
+  {
+   "id": "wart",
+   "vi": "Mụn cóc",
+   "alias": [
+    "mun coc",
+    "wart"
+   ],
+   "en": [
+    "wart",
+    "warts",
+    "verruca"
+   ]
+  },
+  {
+   "id": "hangover",
+   "vi": "Say rượu / nôn nao",
+   "alias": [
+    "say ruou",
+    "nao nao",
+    "nong nao",
+    "hangover"
+   ],
+   "en": [
+    "hangover",
+    "drunk",
+    "intoxication"
+   ]
+  },
+  {
+   "id": "parasite",
+   "vi": "Giun sán / ký sinh trùng",
+   "alias": [
+    "giun",
+    "san",
+    "giun san",
+    "ky sinh trung",
+    "parasite",
+    "worms"
+   ],
+   "en": [
+    "parasite",
+    "worms",
+    "intestinal worms",
+    "pinworm",
+    "tapeworm",
+    "anthelmintic",
+    "vermifuge"
+   ]
+  },
+  {
+   "id": "poorcirc",
+   "vi": "Tay chân lạnh / tuần hoàn kém",
+   "alias": [
+    "tay chan lanh",
+    "tuan hoan kem",
+    "te tay",
+    "te chan",
+    "lanh tay chan",
+    "circulation"
+   ],
+   "en": [
+    "poor circulation",
+    "circulation",
+    "cold hands",
+    "cold feet",
+    "numbness"
+   ]
+  },
+  {
+   "id": "hair",
+   "vi": "Rụng tóc / gàu",
+   "alias": [
+    "rung toc",
+    "gau",
+    "hoi dau",
+    "toc",
+    "hair loss",
+    "dandruff"
+   ],
+   "en": [
+    "hair loss",
+    "dandruff",
+    "scalp",
+    "baldness"
+   ]
+  },
+  {
+   "id": "nosebleed",
+   "vi": "Chảy máu cam",
+   "alias": [
+    "chay mau cam",
+    "chay mau mui",
+    "nosebleed"
+   ],
+   "en": [
+    "nosebleed",
+    "nose bleed",
+    "epistaxis"
+   ]
+  },
+  {
+   "id": "hiccup",
+   "vi": "Nấc cụt",
+   "alias": [
+    "nac",
+    "nac cut",
+    "hiccup"
+   ],
+   "en": [
+    "hiccup",
+    "hiccough"
+   ]
+  },
+  {
+   "id": "memory",
+   "vi": "Trí nhớ / tập trung kém",
+   "alias": [
+    "tri nho",
+    "hay quen",
+    "kem tap trung",
+    "tap trung",
+    "sa sut tri tue",
+    "memory"
+   ],
+   "en": [
+    "memory",
+    "concentration",
+    "cognitive",
+    "dementia",
+    "alzheimer"
+   ]
+  },
+  {
+   "id": "inflammation",
+   "vi": "Viêm / sưng tấy",
+   "alias": [
+    "viem",
+    "sung",
+    "sung tay",
+    "phu",
+    "phu ne",
+    "inflammation",
+    "swelling"
+   ],
+   "en": [
+    "inflammation",
+    "anti-inflammatory",
+    "swelling",
+    "swollen",
+    "edema",
+    "oedema"
+   ]
+  },
+  {
+   "id": "heartattack",
+   "vi": "Đau thắt ngực / đột quỵ (sơ cứu)",
+   "alias": [
+    "dau nguc",
+    "dau that nguc",
+    "nhoi tim",
+    "dot quy",
+    "dau tim",
+    "heart attack",
+    "stroke"
+   ],
+   "en": [
+    "heart attack",
+    "stroke",
+    "angina",
+    "chest pain",
+    "cardiac"
+   ]
+  },
+  {
+   "id": "bleeding",
+   "vi": "Cầm máu",
+   "alias": [
+    "cam mau",
+    "mat mau",
+    "bleeding"
+   ],
+   "en": [
+    "bleeding",
+    "hemorrhage",
+    "haemorrhage",
+    "stop bleeding",
+    "styptic",
+    "blood loss"
+   ]
+  }
+ ],
+ "herbs": {
+  "ginger": "Gừng",
+  "garlic": "Tỏi",
+  "onion": "Hành tây",
+  "honey": "Mật ong",
+  "lemon": "Chanh vàng",
+  "lime": "Chanh",
+  "cayenne": "Ớt cayenne",
+  "chili": "Ớt",
+  "turmeric": "Nghệ",
+  "cinnamon": "Quế",
+  "clove": "Đinh hương",
+  "peppermint": "Bạc hà Âu",
+  "mint": "Bạc hà",
+  "spearmint": "Bạc hà lục",
+  "thyme": "Cỏ xạ hương",
+  "oregano": "Kinh giới cay (oregano)",
+  "sage": "Xô thơm",
+  "rosemary": "Hương thảo",
+  "basil": "Húng quế",
+  "holy basil": "Hương nhu tía (tulsi)",
+  "tulsi": "Hương nhu tía (tulsi)",
+  "chamomile": "Hoa cúc La Mã",
+  "lavender": "Oải hương",
+  "eucalyptus": "Khuynh diệp (bạch đàn)",
+  "tea tree": "Tràm trà",
+  "echinacea": "Cúc tím (echinacea)",
+  "elderberry": "Cơm cháy (elderberry)",
+  "elder": "Cơm cháy",
+  "elderflower": "Hoa cơm cháy",
+  "licorice": "Cam thảo",
+  "marshmallow": "Thục quỳ (marshmallow)",
+  "mullein": "Cây mullein (lông mao)",
+  "plantain": "Mã đề",
+  "yarrow": "Cỏ thi (yarrow)",
+  "dandelion": "Bồ công anh",
+  "nettle": "Tầm ma",
+  "stinging nettle": "Tầm ma",
+  "calendula": "Cúc vạn thọ tây (calendula)",
+  "comfrey": "Cây liên mộc (comfrey)",
+  "aloe": "Nha đam (lô hội)",
+  "aloe vera": "Nha đam (lô hội)",
+  "fennel": "Thì là (tiểu hồi)",
+  "anise": "Hồi",
+  "dill": "Thì là",
+  "cardamom": "Bạch đậu khấu",
+  "black pepper": "Tiêu đen",
+  "apple cider vinegar": "Giấm táo",
+  "vinegar": "Giấm",
+  "coconut oil": "Dầu dừa",
+  "olive oil": "Dầu ô liu",
+  "valerian": "Nữ lang (valerian)",
+  "lemon balm": "Tía tô đất (lemon balm)",
+  "passionflower": "Lạc tiên",
+  "passion flower": "Lạc tiên",
+  "st. john's wort": "Cỏ ban (St. John's wort)",
+  "hawthorn": "Táo gai (hawthorn)",
+  "ginseng": "Nhân sâm",
+  "ashwagandha": "Sâm Ấn Độ (ashwagandha)",
+  "goldenseal": "Hoàng liên Mỹ (goldenseal)",
+  "slippery elm": "Du trơn (slippery elm)",
+  "feverfew": "Cúc thơm (feverfew)",
+  "willow": "Liễu (vỏ liễu)",
+  "white willow": "Vỏ liễu trắng",
+  "boneset": "Cây boneset",
+  "horehound": "Bạc hà đắng (horehound)",
+  "hyssop": "Bài hương (hyssop)",
+  "burdock": "Ngưu bàng",
+  "chickweed": "Cỏ tinh thảo (chickweed)",
+  "rose hip": "Quả tầm xuân",
+  "rosehip": "Quả tầm xuân",
+  "cranberry": "Nam việt quất",
+  "blueberry": "Việt quất",
+  "green tea": "Trà xanh",
+  "cabbage": "Bắp cải",
+  "horseradish": "Cải ngựa",
+  "mustard": "Mù tạt",
+  "cumin": "Thì là Ai Cập",
+  "coriander": "Ngò (rau mùi)",
+  "parsley": "Mùi tây",
+  "celery": "Cần tây",
+  "pine": "Thông",
+  "frankincense": "Nhũ hương",
+  "myrrh": "Mộc dược",
+  "juniper": "Bách xù",
+  "cedarwood": "Gỗ tuyết tùng",
+  "sandalwood": "Đàn hương",
+  "bergamot": "Cam bergamot",
+  "orange": "Cam",
+  "grapefruit": "Bưởi chùm",
+  "marjoram": "Kinh giới ngọt",
+  "clary sage": "Xô thơm lâm sàng (clary sage)",
+  "geranium": "Phong lữ",
+  "rose": "Hoa hồng",
+  "neroli": "Hoa cam (neroli)",
+  "ylang ylang": "Hoàng lan (ylang ylang)",
+  "lemongrass": "Sả",
+  "ravensara": "Ravensara",
+  "niaouli": "Tràm niaouli",
+  "cajuput": "Tràm (cajuput)",
+  "camphor": "Long não",
+  "oats": "Yến mạch",
+  "oatmeal": "Bột yến mạch",
+  "bone broth": "Nước hầm xương",
+  "salt": "Muối",
+  "baking soda": "Muối nở (baking soda)",
+  "yogurt": "Sữa chua",
+  "kombucha": "Kombucha",
+  "sauerkraut": "Dưa cải muối",
+  "reishi": "Nấm linh chi",
+  "chaga": "Nấm chaga",
+  "shiitake": "Nấm hương",
+  "turkey tail": "Nấm vân chi",
+  "lion's mane": "Nấm hầu thủ",
+  "astragalus": "Hoàng kỳ",
+  "moringa": "Chùm ngây",
+  "neem": "Neem (sầu đâu)",
+  "papaya": "Đu đủ",
+  "pineapple": "Dứa (thơm)",
+  "bromelain": "Bromelain (enzym dứa)",
+  "beet": "Củ dền",
+  "carrot": "Cà rốt",
+  "pumpkin seed": "Hạt bí",
+  "flaxseed": "Hạt lanh",
+  "chia": "Hạt chia",
+  "witch hazel": "Cây phỉ (witch hazel)",
+  "arnica": "Kim sa (arnica)",
+  "st john's wort": "Cỏ ban (St. John's wort)",
+  "wild cherry": "Anh đào dại (vỏ)",
+  "lobelia": "Lô-bê-li (lobelia)",
+  "usnea": "Địa y râu (usnea)",
+  "catnip": "Bạc hà mèo",
+  "skullcap": "Hoàng cầm Mỹ (skullcap)",
+  "milk thistle": "Kế sữa",
+  "artichoke": "Atisô",
+  "barberry": "Hoàng mộc (barberry)",
+  "oregon grape": "Nho Oregon",
+  "black walnut": "Óc chó đen",
+  "wormwood": "Ngải đắng",
+  "mugwort": "Ngải cứu",
+  "raspberry leaf": "Lá mâm xôi",
+  "red clover": "Cỏ ba lá đỏ",
+  "evening primrose": "Hoa anh thảo",
+  "black cohosh": "Thăng ma đen (black cohosh)",
+  "vitex": "Ngũ trảo (vitex)",
+  "uva ursi": "Uva ursi (lá dâu gấu)",
+  "corn silk": "Râu ngô",
+  "cornsilk": "Râu ngô",
+  "horsetail": "Cỏ đuôi ngựa",
+  "pau d'arco": "Pau d'arco",
+  "cat's claw": "Vuốt mèo (cat's claw)",
+  "bee balm": "Cây bee balm",
+  "self-heal": "Hạ khô thảo (self-heal)",
+  "pine needle": "Lá thông",
+  "sumac": "Sơn (sumac)",
+  "prickly pear": "Xương rồng lê",
+  "yerba santa": "Yerba santa",
+  "grindelia": "Grindelia",
+  "osha": "Osha",
+  "bayberry": "Dâu rượu (bayberry)",
+  "cayenne pepper": "Ớt cayenne",
+  "sea salt": "Muối biển"
+ }
+}

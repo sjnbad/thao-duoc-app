@@ -1,0 +1,932 @@
+{
+ "books": [
+  "The Lost Book of Herbal Remedies",
+  "The Complete Book of Essential Oils and Aromatherapy",
+  "Ancient Remedies",
+  "Curing With Cayenne",
+  "Survival Herbal Remedies",
+  "The Lost Book of Remedies",
+  "The Autoimmune Protocol",
+  "The Lost Book of a Disease-Free Life",
+  "The Lost Book of a Healthy Life",
+  "The Lost Book of Youth",
+  "The Lost Book of Superfoods",
+  "The Lost Garden of Eden",
+  "Tự chữa bệnh viêm xoang không cần thuốc"
+ ],
+ "redflag": {
+  "fever": "Sốt từ 39,5°C trở lên, sốt kéo dài trên 3 ngày, trẻ dưới 3 tháng tuổi bị sốt, co giật, cứng cổ, lú lẫn hoặc phát ban không mất khi ấn.",
+  "cough": "Ho ra máu, khó thở, môi tím, đau ngực, hoặc ho kéo dài trên 3 tuần.",
+  "bronchitis": "Khó thở, thở rít nặng, môi tím hoặc đau ngực.",
+  "headache": "Đau đầu đột ngột dữ dội nhất từ trước tới nay, kèm sốt + cứng cổ, yếu/liệt, nói khó hoặc sau chấn thương đầu.",
+  "diarrhea": "Phân có máu, mất nước (khô miệng, tiểu rất ít, lả), tiêu chảy ở trẻ nhỏ kéo dài trên 1 ngày.",
+  "stomachache": "Đau bụng dữ dội, bụng cứng, nôn ra máu, đi ngoài phân đen.",
+  "burn": "Bỏng rộng hơn lòng bàn tay, bỏng ở mặt, tay, bộ phận sinh dục, bỏng điện, bỏng hóa chất hoặc bỏng sâu (da trắng/đen).",
+  "heartattack": "Đau thắt ngực, đột quỵ là cấp cứu — gọi 115 ngay.",
+  "throat": "Khó nuốt nước bọt, khó thở, không há được miệng.",
+  "wound": "Vết thương sâu, chảy máu không cầm được sau 10 phút ấn chặt, vết cắn động vật.",
+  "bleeding": "Chảy máu không cầm được sau 10 phút ấn chặt.",
+  "sinus": "Sưng đỏ quanh mắt, nhìn mờ, đau đầu dữ dội hoặc sốt cao.",
+  "ear": "Chảy mủ/máu tai, sốt cao, đau dữ dội ở trẻ nhỏ.",
+  "uti": "Sốt, đau hông lưng, tiểu ra máu.",
+  "dizziness": "Chóng mặt kèm méo miệng, yếu nửa người, nói khó (dấu hiệu đột quỵ)."
+ },
+ "guide": {
+  "cold": {
+   "t": "Cảm lạnh / cảm cúm",
+   "items": [
+    {
+     "t": "Canh/nước hầm xương gà với gừng, tỏi",
+     "d": "Nấu súp nước hầm xương gà, thêm các gia vị ấm như tỏi, gừng; uống nhiều nước ấm.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       216
+      ]
+     ]
+    },
+    {
+     "t": "Nước ấm + mật ong + quế + chanh",
+     "d": "Pha nước nóng với mật ong, chút quế và vài giọt chanh, uống trong ngày.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       216
+      ]
+     ]
+    },
+    {
+     "t": "Cúc tím (echinacea)",
+     "d": "Sách ghi: 5 ml x 2 lần/ngày trong 10 ngày để phòng và trị cảm.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       216
+      ]
+     ],
+     "w": "Ghi chú của app: người bệnh tự miễn, đang dùng thuốc ức chế miễn dịch hoặc dị ứng họ Cúc nên hỏi bác sĩ trước."
+    },
+    {
+     "t": "Cơm cháy (elderberry)",
+     "d": "Giúp rút ngắn thời gian bệnh; dùng dạng siro elderberry.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       216
+      ],
+      [
+       0,
+       229
+      ]
+     ]
+    },
+    {
+     "t": "Tinh dầu khuếch tán",
+     "d": "Khuếch tán 3 giọt cỏ xạ hương, chanh, khuynh diệp hoặc đinh hương trong phòng.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       216
+      ]
+     ]
+    },
+    {
+     "t": "Ngủ đủ, vận động nhẹ",
+     "d": "Ngủ 9–10 tiếng/đêm, đi bộ hoặc yoga nhẹ. Tránh đường, nước ép trái cây, sữa, đồ chế biến sẵn.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       216
+      ]
+     ]
+    }
+   ]
+  },
+  "cough": {
+   "t": "Ho",
+   "items": [
+    {
+     "t": "Ho khan – dầu xoa ngực/lưng",
+     "d": "Trộn 3 giọt khuynh diệp radiata + 2 giọt cỏ xạ hương (thyme linalol); lấy 4–5 giọt hỗn hợp pha với 1 thìa cà phê (5 ml) dầu nền, xoa lên ngực và lưng ít nhất 2 lần/ngày.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       92
+      ]
+     ]
+    },
+    {
+     "t": "Xông hơi",
+     "d": "Nhỏ 3 giọt oải hương + 3 giọt khuynh diệp vào bát nước nóng, trùm khăn hít hơi (nhắm mắt).",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       92
+      ]
+     ]
+    },
+    {
+     "t": "Ho có đờm",
+     "d": "Xông hơi như trên; xoa ngực/lưng hỗn hợp khuynh diệp 2 giọt, cỏ xạ hương 2, tràm trà 1, phong lữ 1 (pha 6 giọt/5 ml dầu nền).",
+     "lv": 3,
+     "src": [
+      [
+       1,
+       92
+      ]
+     ]
+    },
+    {
+     "t": "Trà cỏ xạ hương, mullein, cam thảo",
+     "d": "Trà cỏ xạ hương trị đau họng, ho; mullein và cam thảo được nhắc cho viêm phế quản.",
+     "lv": 2,
+     "src": [
+      [
+       0,
+       141
+      ],
+      [
+       0,
+       116
+      ],
+      [
+       2,
+       211
+      ]
+     ]
+    },
+    {
+     "t": "Xông khuynh diệp (viêm phế quản)",
+     "d": "10 giọt tinh dầu khuynh diệp vào nồi nước sôi, trùm khăn hít 5–10 phút. Dùng máy tạo ẩm khi ngủ để làm loãng đờm.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       211
+      ]
+     ]
+    }
+   ]
+  },
+  "bronchitis": {
+   "ref": "cough"
+  },
+  "fever": {
+   "t": "Sốt",
+   "items": [
+    {
+     "t": "Trà cỏ thi (yarrow)",
+     "d": "Uống trà hoặc cồn thuốc yarrow để ra mồ hôi, hạ sốt nhanh; rút ngắn thời gian cảm và sốt.",
+     "lv": 2,
+     "src": [
+      [
+       0,
+       151
+      ]
+     ]
+    },
+    {
+     "t": "Boneset",
+     "d": "Thảo dược nổi tiếng trị sốt, cảm lạnh ngực và cúm (pha trà).",
+     "lv": 3,
+     "src": [
+      [
+       0,
+       50
+      ]
+     ]
+    },
+    {
+     "t": "Trà vỏ liễu trắng",
+     "d": "1–2 g vỏ liễu đun nhỏ lửa với 1 cốc nước ~10 phút; có hoạt chất giống aspirin, giảm đau và hạ sốt. KHÔNG dùng cho trẻ em, người dị ứng aspirin, không dùng lâu dài.",
+     "lv": 3,
+     "src": [
+      [
+       0,
+       265
+      ]
+     ],
+     "w": "Ghi chú của app: không dùng cho trẻ em, người dị ứng aspirin, đang dùng thuốc chống đông; không dùng lâu dài."
+    },
+    {
+     "t": "Lau mát cơ thể",
+     "d": "Giữ cơ thể mát bằng cách lau/chườm nước ấm-mát; có thể thêm vài giọt tinh dầu (oải hương) vào nước lau.",
+     "lv": 1,
+     "src": [
+      [
+       1,
+       250
+      ]
+     ]
+    },
+    {
+     "t": "Uống đủ nước",
+     "d": "Bù nước liên tục; với trẻ em, sách nhấn mạnh cho uống nhiều và theo dõi nhiệt độ.",
+     "lv": 1,
+     "src": [
+      [
+       1,
+       250
+      ]
+     ]
+    }
+   ]
+  },
+  "runny": {
+   "t": "Chảy nước mũi / sổ mũi",
+   "items": [
+    {
+     "t": "Tầm ma (nettle)",
+     "d": "Có tính kháng histamin tự nhiên, giúp giảm chảy mũi, hắt hơi.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       205
+      ]
+     ]
+    },
+    {
+     "t": "Mật ong địa phương",
+     "d": "1–2 thìa cà phê mật ong (và phấn hoa) địa phương hằng ngày để cơ thể quen dần với phấn hoa vùng mình.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       205
+      ]
+     ]
+    },
+    {
+     "t": "Rửa mũi bằng bình neti",
+     "d": "Làm loãng chất nhầy và làm sạch đường mũi.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       205
+      ]
+     ]
+    },
+    {
+     "t": "Khuếch tán tinh dầu",
+     "d": "3 giọt bạc hà, khuynh diệp, chanh hoặc tràm trà.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       205
+      ]
+     ]
+    }
+   ]
+  },
+  "stuffy": {
+   "t": "Nghẹt mũi",
+   "items": [
+    {
+     "t": "Xông hơi tinh dầu",
+     "d": "Trộn hương thảo 2 giọt, bạc hà 1, tràm trà 1, khuynh diệp radiata 1, bạch đậu khấu 2; dùng 3–4 giọt vào bát nước nóng, hít hơi ít nhất 10 phút (nhắm chặt mắt).",
+     "lv": 3,
+     "src": [
+      [
+       1,
+       85
+      ]
+     ]
+    },
+    {
+     "t": "Dầu xoa ngực và lưng",
+     "d": "Tràm trà 2, hương thảo 2, khuynh diệp radiata 5, cỏ xạ hương 1 giọt; pha 3–5 giọt/5 ml dầu nền hoặc gel nha đam.",
+     "lv": 3,
+     "src": [
+      [
+       1,
+       85
+      ]
+     ]
+    },
+    {
+     "t": "Khăn giấy tinh dầu",
+     "d": "Nhỏ 2 giọt hỗn hợp lên khăn giấy, hít khi cần.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       85
+      ]
+     ]
+    },
+    {
+     "t": "Trà ớt cayenne",
+     "d": "Một độc giả kể bắt đầu 1/4 thìa cà phê cayenne/cốc nước nóng, dần lên 1 thìa x 3 lần/ngày, xoang thông dần sau vài ngày (lời kể cá nhân).",
+     "lv": 1,
+     "src": [
+      [
+       3,
+       82
+      ]
+     ],
+     "w": "Ghi chú của app: ớt gây rát; không dùng khi đau dạ dày, trào ngược, trẻ nhỏ."
+    },
+    {
+     "t": "Khuếch tán khuynh diệp / bạc hà",
+     "d": "5 giọt khuếch tán trong phòng để mở thông xoang; dùng máy tạo ẩm.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       254
+      ]
+     ]
+    }
+   ]
+  },
+  "sinus": {
+   "t": "Viêm xoang",
+   "items": [
+    {
+     "t": "Luyện thở nín hơi (bài báo tiếng Việt)",
+     "d": "Tập 3 lần/ngày lúc bụng đói, nơi thoáng yên tĩnh, mỗi lần ~15 phút: hít sâu 10 lần, rồi hít căng và nín thở, ngậm miệng; tưởng tượng luồng khí đi xuống bụng dưới (hạ đan điền) rồi lan ra tay chân. Tác giả kể khỏi viêm xoang sau khoảng nửa mùa đông tập đều.",
+     "lv": 2,
+     "src": [
+      [
+       12,
+       1
+      ]
+     ],
+     "w": "Ghi chú của app: người có bệnh tim mạch, huyết áp, hen, phụ nữ mang thai không nên tập nín thở lâu; ngừng ngay nếu chóng mặt, tức ngực."
+    },
+    {
+     "t": "Rửa mũi bằng bình neti, máy tạo ẩm",
+     "d": "Làm sạch xoang; ngủ 9–10 tiếng, vận động nhẹ.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       254
+      ]
+     ]
+    },
+    {
+     "t": "Cúc tím, tầm ma, bromelain + quercetin",
+     "d": "Cúc tím 1.000 mg x 2 lần/ngày; tầm ma 300–500 mg x 3 lần/ngày (kháng histamin); bromelain & quercetin chống viêm.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       254
+      ]
+     ]
+    },
+    {
+     "t": "Xông hơi tinh dầu",
+     "d": "Xem mục Nghẹt mũi: hương thảo, bạc hà, tràm trà, khuynh diệp.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       85
+      ]
+     ]
+    },
+    {
+     "t": "Ăn uống",
+     "d": "Nên ăn rau lá xanh, súp xương, tỏi, hành, cỏ xạ hương, gừng; tránh đường, sữa, đồ nhiều dầu mỡ.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       254
+      ]
+     ]
+    }
+   ]
+  },
+  "throat": {
+   "t": "Đau họng / viêm họng",
+   "items": [
+    {
+     "t": "Chanh + mật ong ấm",
+     "d": "Vắt chanh tươi vào cốc, thêm mật ong (manuka nếu có), đổ nước nóng, để ấm rồi uống.",
+     "lv": 1,
+     "src": [
+      [
+       1,
+       303
+      ]
+     ]
+    },
+    {
+     "t": "Súc họng nước chanh / cayenne",
+     "d": "Một người kể súc họng bằng nước chanh ấm và nước ấm pha ớt cayenne, uống trà cayenne, kèm vitamin C để hết viêm amidan (lời kể).",
+     "lv": 1,
+     "src": [
+      [
+       3,
+       79
+      ]
+     ],
+     "w": "Ghi chú của app: không dùng cayenne khi đau dạ dày; trẻ em chỉ súc nước muối ấm."
+    },
+    {
+     "t": "Súc họng trà thảo dược",
+     "d": "Trà xô thơm, trà lá thảo dược làm nước súc họng nhiều lần mỗi ngày giúp giảm đau và kháng khuẩn.",
+     "lv": 2,
+     "src": [
+      [
+       0,
+       150
+      ],
+      [
+       0,
+       132
+      ]
+     ]
+    },
+    {
+     "t": "Xông hơi họng (viêm thanh quản)",
+     "d": "Cúc La Mã 2 giọt, oải hương 3, cỏ xạ hương 2; 3–4 giọt vào bát nước nóng, hít bằng mũi.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       105
+      ]
+     ]
+    },
+    {
+     "t": "Dầu bôi vùng cổ",
+     "d": "Cúc La Mã 5 giọt, cỏ xạ hương 1, chanh 2; pha 3–5 giọt/5 ml dầu nền, bôi lên cổ và sau tai.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       105
+      ]
+     ]
+    }
+   ]
+  },
+  "headache": {
+   "t": "Đau đầu / đau nửa đầu",
+   "items": [
+    {
+     "t": "Oải hương + bạc hà",
+     "d": "Xoa 3 giọt mỗi loại lên gáy và thái dương.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       242
+      ]
+     ]
+    },
+    {
+     "t": "Cúc thơm (feverfew)",
+     "d": "Dùng đều đặn hằng ngày để phòng đau nửa đầu (trà hoặc cồn thuốc). Không dùng khi mang thai.",
+     "lv": 3,
+     "src": [
+      [
+       0,
+       80
+      ]
+     ],
+     "w": "Ghi chú của app: không dùng khi mang thai, người dị ứng họ Cúc hoặc đang dùng thuốc chống đông."
+    },
+    {
+     "t": "Đau đầu do căng thẳng",
+     "d": "Mát-xa quanh đáy hộp sọ, dọc chân tóc bằng hỗn hợp tinh dầu oải hương pha loãng.",
+     "lv": 2,
+     "src": [
+      [
+       1,
+       102
+      ]
+     ]
+    },
+    {
+     "t": "Kinh giới ngọt (marjoram)",
+     "d": "Hít hoặc nhỏ 2–3 giọt vào máy xông/bồn tắm giúp thư giãn cơ, giảm đau đầu do căng thẳng.",
+     "lv": 2,
+     "src": [
+      [
+       0,
+       139
+      ]
+     ]
+    },
+    {
+     "t": "Magie, ngủ đều giờ",
+     "d": "Sách gợi ý magie 500 mg/ngày; giữ lịch ngủ đều, tránh rượu, caffeine, đường.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       242
+      ]
+     ]
+    }
+   ]
+  },
+  "diarrhea": {
+   "t": "Tiêu chảy",
+   "items": [
+    {
+     "t": "Bù nước",
+     "d": "Vấn đề chính của tiêu chảy là mất nước — uống nước dừa, súp xương, cháo loãng.",
+     "lv": 1,
+     "src": [
+      [
+       1,
+       251
+      ],
+      [
+       2,
+       219
+      ]
+     ]
+    },
+    {
+     "t": "Gừng",
+     "d": "Giảm viêm ruột: 500 mg 1–3 lần/ngày dạng trà hoặc viên.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       219
+      ]
+     ]
+    },
+    {
+     "t": "Trà lá dâu tây dại",
+     "d": "Lá và rễ dâu tây có tính se, dùng trà cho tiêu chảy, lỵ.",
+     "lv": 3,
+     "src": [
+      [
+       0,
+       208
+      ]
+     ]
+    },
+    {
+     "t": "Thức ăn nên dùng",
+     "d": "Chuối, táo nghiền, cháo gạo, bí đỏ, cà rốt nấu chín.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       219
+      ]
+     ]
+    },
+    {
+     "t": "Dầu xoa bụng",
+     "d": "2–3 giọt tinh dầu đinh hương hoặc gừng pha 1 thìa cà phê dầu dừa, xoa bụng.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       219
+      ]
+     ]
+    }
+   ]
+  },
+  "constipation": {
+   "t": "Táo bón",
+   "items": [
+    {
+     "t": "Hạt chia / hạt lanh",
+     "d": "2–3 thìa canh mỗi ngày với nước để bôi trơn đại tràng.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       217
+      ]
+     ]
+    },
+    {
+     "t": "Du trơn & thục quỳ (slippery elm, marshmallow)",
+     "d": "Làm ẩm đại tràng, dùng theo hướng dẫn.",
+     "lv": 3,
+     "src": [
+      [
+       2,
+       217
+      ]
+     ]
+    },
+    {
+     "t": "Nước ấm + vận động",
+     "d": "Uống nhiều nước ấm trong ngày; đi bộ nhanh, yoga.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       217
+      ]
+     ]
+    },
+    {
+     "t": "Ăn nhiều chất xơ",
+     "d": "Rau lá xanh, đậu bắp, táo, chuối, mận khô, sung, khoai lang.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       217
+      ]
+     ]
+    },
+    {
+     "t": "Tinh dầu gừng / thì là",
+     "d": "1–2 giọt với nước, 2 lần/ngày (theo sách).",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       217
+      ]
+     ],
+     "w": "Ghi chú của app: uống tinh dầu có rủi ro, kể cả liều nhỏ — chỉ dùng loại ghi rõ dùng được cho thực phẩm, không cho trẻ em, phụ nữ mang thai; tốt nhất hỏi thầy thuốc."
+    }
+   ]
+  },
+  "heartburn": {
+   "t": "Ợ chua / trào ngược",
+   "items": [
+    {
+     "t": "Cam thảo",
+     "d": "Làm dịu dạ dày: 500–1.000 mg/ngày.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       202
+      ]
+     ],
+     "w": "Ghi chú của app: cam thảo dùng lâu có thể làm tăng huyết áp, giảm kali — người cao huyết áp, bệnh tim, thận, phụ nữ mang thai tránh dùng."
+    },
+    {
+     "t": "Gừng",
+     "d": "Cân bằng axit: 500 mg hoặc 1 cốc trà x 2 lần/ngày.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       202
+      ]
+     ]
+    },
+    {
+     "t": "Giấm táo hoặc baking soda",
+     "d": "1 thìa canh giấm táo pha nước, hoặc 1/4 thìa cà phê baking soda pha nước; thử xem cách nào đỡ hơn.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       202
+      ]
+     ]
+    },
+    {
+     "t": "Thói quen",
+     "d": "Ăn ít mỗi bữa, nhai kỹ, không ăn trong 3 giờ trước khi ngủ; tránh sô-cô-la, rượu, đồ cay, đồ chiên.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       202
+      ]
+     ]
+    }
+   ]
+  },
+  "indigestion": {
+   "ref": "heartburn"
+  },
+  "insomnia": {
+   "t": "Mất ngủ",
+   "items": [
+    {
+     "t": "Trà hoa cúc La Mã",
+     "d": "Một cốc trước khi ngủ, giúp giảm lo âu.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       237
+      ]
+     ]
+    },
+    {
+     "t": "Rễ nữ lang (valerian)",
+     "d": "300–900 mg trước khi ngủ.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       237
+      ]
+     ],
+     "w": "Ghi chú của app: không phối với rượu, thuốc ngủ; không lái xe sau khi dùng."
+    },
+    {
+     "t": "Khuếch tán oải hương / cúc La Mã",
+     "d": "5 giọt trong phòng ngủ.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       237
+      ]
+     ]
+    },
+    {
+     "t": "Thói quen",
+     "d": "Đón nắng sáng, tập thể dục, không dùng màn hình 3 giờ trước khi ngủ, phòng tối và yên tĩnh, giờ ngủ cố định.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       237
+      ]
+     ]
+    }
+   ]
+  },
+  "anxiety": {
+   "t": "Căng thẳng / lo âu",
+   "items": [
+    {
+     "t": "Trà hoa cúc La Mã",
+     "d": "1–2 cốc mỗi ngày làm dịu thần kinh.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       207
+      ]
+     ]
+    },
+    {
+     "t": "Sâm Ấn Độ (ashwagandha)",
+     "d": "300–500 mg/ngày giúp kiểm soát cortisol.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       207
+      ]
+     ],
+     "w": "Ghi chú của app: không dùng khi mang thai, cường giáp hoặc đang dùng thuốc an thần."
+    },
+    {
+     "t": "Tía tô đất, nữ lang",
+     "d": "Các thảo dược hỗ trợ thêm được sách nhắc đến.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       207
+      ]
+     ]
+    },
+    {
+     "t": "Khuếch tán tinh dầu",
+     "d": "Oải hương, cúc La Mã hoặc hoàng lan để thư giãn.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       207
+      ]
+     ]
+    },
+    {
+     "t": "Lối sống",
+     "d": "Thiền, cầu nguyện, yoga, đi bộ giữa thiên nhiên, ngủ 8 tiếng.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       207
+      ]
+     ]
+    }
+   ]
+  },
+  "burn": {
+   "t": "Bỏng (độ 1–2, nhỏ)",
+   "items": [
+    {
+     "t": "Nước mát",
+     "d": "Xả nước mát (không lạnh) lên vết bỏng 20 phút, rồi rửa bằng xà phòng.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       212
+      ]
+     ]
+    },
+    {
+     "t": "Gel nha đam",
+     "d": "Bôi lớp mỏng nha đam nguyên chất mỗi ngày đến khi lành.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       212
+      ]
+     ]
+    },
+    {
+     "t": "Tinh dầu oải hương",
+     "d": "2–5 giọt x 3 lần/ngày giúp mau lành.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       212
+      ]
+     ]
+    },
+    {
+     "t": "Mật ong manuka",
+     "d": "Bôi lớp mỏng mỗi ngày, kháng khuẩn tự nhiên. Không chọc vỡ bóng nước.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       212
+      ]
+     ]
+    }
+   ]
+  },
+  "joint": {
+   "t": "Đau khớp / viêm khớp",
+   "items": [
+    {
+     "t": "Nghệ + tiêu đen",
+     "d": "1.000–3.000 mg nghệ/ngày, dùng kèm tiêu đen để hấp thu tốt hơn.",
+     "lv": 1,
+     "src": [
+      [
+       2,
+       208
+      ]
+     ]
+    },
+    {
+     "t": "Nhũ hương (boswellia)",
+     "d": "500–1.500 mg/ngày giảm viêm.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       208
+      ]
+     ]
+    },
+    {
+     "t": "Dầu xoa nhũ hương + mộc dược",
+     "d": "3 giọt mỗi loại trộn 1/4 thìa cà phê dầu dừa, xoa vùng đau.",
+     "lv": 2,
+     "src": [
+      [
+       2,
+       208
+      ]
+     ]
+    },
+    {
+     "t": "Thuốc mỡ liên mộc (comfrey)",
+     "d": "Bôi ngoài da cho đau khớp gối, đau lưng, bong gân. Không uống, không dùng khi mang thai.",
+     "lv": 3,
+     "src": [
+      [
+       0,
+       66
+      ]
+     ],
+     "w": "Ghi chú của app: liên mộc chỉ dùng ngoài da lành, không bôi vết thương hở, không dùng quá 10 ngày liền."
+    }
+   ]
+  },
+  "allergy": {
+   "ref": "runny"
+  }
+ }
+}

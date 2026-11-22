@@ -1,0 +1,5 @@
+data=open("data.json").read().replace("</","<\\/")
+eng=open("search.js").read(); g=open("guide.js").read(); lb=open("lib.js").read()
+t=open("app.tpl.html").read()
+t=t.replace("/*ENGINE*/",eng,1).replace("/*GUIDE*/",g,1).replace("/*LIB*/",lb,1)
+open("index.html","w").write(t); print(len(t))
